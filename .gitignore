@@ -5,3 +5,7 @@ resources/
 
 # Editor
 .vscode/
+
+venv/
+*.pyc
+__pycache__/
