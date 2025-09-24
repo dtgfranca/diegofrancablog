@@ -1,3 +1,7 @@
+# URL do site
+baseURL = "https://diegofranca.dev/"
+relativeURLs = true
+
 # Configurações gerais
 params.customCSS = ["css/custom.css"]
 
