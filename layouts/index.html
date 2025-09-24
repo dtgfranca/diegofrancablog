@@ -148,14 +148,7 @@
             {{ end }}
         </ul>
     </div>
-    <aside class="sidebar">
-        <h3>Índice</h3>
-        <ul>
-            {{  range where .Site.RegularPages "Section" "posts"  }}
-            <li><a href="#post-{{ .File.UniqueID }}">{{ .Title }}</a></li>
-            {{ end }}
-        </ul>
-    </aside>
+
 </div>
 
 {{ end }}
