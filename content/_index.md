@@ -1,13 +1,4 @@
-[menu]
-[[menu.main]]
-name = "Docs"
-url = "/docs/"
-weight = 1
-[[menu.main]]
-name = "About"
-url = "/about/"
-weight = 2
-[[menu.main]]
-name = "Contact"
-url = "/contact/"
-weight = 3
+---
+title: About
+type: about
+---

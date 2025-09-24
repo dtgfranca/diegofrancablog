@@ -1,40 +1,87 @@
+{{ define "main" }}
+<style>
+    header, nav {
+        width: 100%;
+        background: #fff; /* ou a cor do seu tema */
+        padding: 1rem 2rem;
+        border-bottom: 1px solid #ddd;
+    }
+    .main-content {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+    }
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
 
-{{/* layouts/index.html */}}
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ .Site.Title }}</title>
-    <link rel="stylesheet" href="{{ "css/styles.css" | relURL }}">
-    <style>
-        body { font-family: Arial, sans-serif; max-width: 800px; margin: auto; padding: 2rem; }
-        header { text-align: center; margin-bottom: 2rem; }
-        h1 { font-size: 2.5rem; }
-        ul { list-style: none; padding: 0; }
-        li { margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #ddd; }
-        a { font-size: 1.5rem; color: #007acc; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        small { color: #555; }
-        .tags { margin-top: 0.5rem; }
-        .tag { display: inline-block; background: #eee; color: #333; padding: 0.2rem 0.5rem; margin-right: 0.3rem; border-radius: 3px; font-size: 0.8rem; }
-        .summary { margin-top: 0.5rem; color: #333; }
-    </style>
-</head>
-<body>
-<header>
-    <h1>{{ .Site.Title }}</h1>
-    {{ if .Site.Params.description }}
-    <p>{{ .Site.Params.description }}</p>
-    {{ end }}
-</header>
+    ul.post-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
 
-<main>
-    <h2>Índice de Posts</h2>
-    <ul>
-        {{ range .Site.RegularPages.ByDate.Reverse }}
+    ul.post-list li {
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid #ddd;
+    }
+
+    ul.post-list li:last-child {
+        border-bottom: none;
+    }
+
+    .post-title {
+        font-size: 1.8rem;
+        color: #007acc;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .post-title:hover {
+        text-decoration: underline;
+    }
+
+    .post-meta {
+        margin-top: 0.3rem;
+        font-size: 0.9rem;
+        color: #666;
+    }
+
+    .tags {
+        margin-top: 0.5rem;
+    }
+
+    .tag {
+        display: inline-block;
+        background: #f4f4f4;
+        color: #333;
+        padding: 0.2rem 0.6rem;
+        margin-right: 0.3rem;
+        border-radius: 3px;
+        font-size: 0.8rem;
+    }
+
+    .summary {
+        margin-top: 0.8rem;
+        font-size: 1rem;
+        color: #444;
+    }
+
+</style>
+
+<div class="main-content">
+    <h1>Posts Recentes</h1>
+    <ul class="post-list">
+        {{ range .Site.RegularPages }}
         <li>
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-            <small>({{ .Date.Format "02 Jan 2006" }})</small>
+            <a class="post-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <div class="post-meta">
+                <small>Publicado em {{ .Date.Format "02/01/2006" }}</small>
+            </div>
 
             {{ with .Params.tags }}
             <div class="tags">
@@ -44,18 +91,10 @@
             </div>
             {{ end }}
 
-            {{ with .Summary }}
-            <p class="summary">{{ . | plainify }}</p>
-            {{ else }}
-            <p class="summary">{{ .Content | plainify | truncate 150 }}</p>
-            {{ end }}
+            <p class="summary">{{ .Summary }}</p>
         </li>
         {{ end }}
     </ul>
-</main>
+</div>
 
-<footer>
-    <p>© {{ now.Format "2006" }} {{ .Site.Title }}</p>
-</footer>
-</body>
-</html>
+{{ end }}
