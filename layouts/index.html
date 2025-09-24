@@ -70,31 +70,92 @@
         font-size: 1rem;
         color: #444;
     }
+    .layout {
+        display: flex;
+        max-width: 1100px;
+        margin: 2rem auto;
+        gap: 2rem;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        width: 250px;
+        flex-shrink: 0;
+        border-right: 1px solid #ddd;
+        padding-right: 1rem;
+        position: sticky; /* fica fixo ao rolar */
+        top: 2rem;
+        height: max-content;
+    }
+
+    .sidebar h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .sidebar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .sidebar li {
+        margin-bottom: 0.6rem;
+    }
+
+    .sidebar a {
+        text-decoration: none;
+        color: #007acc;
+        font-size: 0.95rem;
+    }
+
+    .sidebar a:hover {
+        text-decoration: underline;
+    }
+
+    /* Conteúdo principal */
+    .main-content {
+        flex: 1;
+        max-width: 800px;
+    }
 
 </style>
+<div class="layout">
+    <!-- Índice lateral com os títulos -->
+    <div class="main-content">
+        <h1>Posts Recentes</h1>
+        <ul class="post-list">
+            {{ range .Site.RegularPages }}
+            <li>
+                <h2 id="post-{{ .File.UniqueID }}">
+                    <a class="post-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </h2>
 
-<div class="main-content">
-    <h1>Posts Recentes</h1>
-    <ul class="post-list">
-        {{ range .Site.RegularPages }}
-        <li>
-            <a class="post-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
-            <div class="post-meta">
-                <small>Publicado em {{ .Date.Format "02/01/2006" }}</small>
-            </div>
+                <div class="post-meta">
+                    <small>Publicado em {{ .Date.Format "02/01/2006" }}</small>
+                </div>
 
-            {{ with .Params.tags }}
-            <div class="tags">
-                {{ range . }}
-                <span class="tag">{{ . }}</span>
+                {{ with .Params.tags }}
+                <div class="tags">
+                    {{ range . }}
+                    <span class="tag">{{ . }}</span>
+                    {{ end }}
+                </div>
                 {{ end }}
-            </div>
-            {{ end }}
 
-            <p class="summary">{{ .Summary }}</p>
-        </li>
-        {{ end }}
-    </ul>
+                <p class="summary">{{ .Summary }}</p>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+    <aside class="sidebar">
+        <h3>Índice</h3>
+        <ul>
+            {{ range .Site.RegularPages }}
+            <li><a href="#post-{{ .File.UniqueID }}">{{ .Title }}</a></li>
+            {{ end }}
+        </ul>
+    </aside>
 </div>
 
 {{ end }}
