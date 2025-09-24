@@ -1,0 +1,61 @@
+
+{{/* layouts/index.html */}}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ .Site.Title }}</title>
+    <link rel="stylesheet" href="{{ "css/styles.css" | relURL }}">
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: auto; padding: 2rem; }
+        header { text-align: center; margin-bottom: 2rem; }
+        h1 { font-size: 2.5rem; }
+        ul { list-style: none; padding: 0; }
+        li { margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #ddd; }
+        a { font-size: 1.5rem; color: #007acc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        small { color: #555; }
+        .tags { margin-top: 0.5rem; }
+        .tag { display: inline-block; background: #eee; color: #333; padding: 0.2rem 0.5rem; margin-right: 0.3rem; border-radius: 3px; font-size: 0.8rem; }
+        .summary { margin-top: 0.5rem; color: #333; }
+    </style>
+</head>
+<body>
+<header>
+    <h1>{{ .Site.Title }}</h1>
+    {{ if .Site.Params.description }}
+    <p>{{ .Site.Params.description }}</p>
+    {{ end }}
+</header>
+
+<main>
+    <h2>Índice de Posts</h2>
+    <ul>
+        {{ range .Site.RegularPages.ByDate.Reverse }}
+        <li>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+            <small>({{ .Date.Format "02 Jan 2006" }})</small>
+
+            {{ with .Params.tags }}
+            <div class="tags">
+                {{ range . }}
+                <span class="tag">{{ . }}</span>
+                {{ end }}
+            </div>
+            {{ end }}
+
+            {{ with .Summary }}
+            <p class="summary">{{ . | plainify }}</p>
+            {{ else }}
+            <p class="summary">{{ .Content | plainify | truncate 150 }}</p>
+            {{ end }}
+        </li>
+        {{ end }}
+    </ul>
+</main>
+
+<footer>
+    <p>© {{ now.Format "2006" }} {{ .Site.Title }}</p>
+</footer>
+</body>
+</html>

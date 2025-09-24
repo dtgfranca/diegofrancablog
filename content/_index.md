@@ -1,17 +1,13 @@
----
-title: My Site
-toc: false
----
-
-This is the landing page.
-
-## Explore
-
-{{< cards >}}
-  {{< card link="docs" title="Docs" icon="book-open" >}}
-  {{< card link="about" title="About" icon="user" >}}
-{{< /cards >}}
-
-## Documentation
-
-For more information, visit [Hextra](https://imfing.github.io/hextra).
+[menu]
+[[menu.main]]
+name = "Docs"
+url = "/docs/"
+weight = 1
+[[menu.main]]
+name = "About"
+url = "/about/"
+weight = 2
+[[menu.main]]
+name = "Contact"
+url = "/contact/"
+weight = 3
