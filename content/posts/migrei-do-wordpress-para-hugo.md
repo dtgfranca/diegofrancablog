@@ -15,7 +15,7 @@ Escolhi o WordPress, comprei um tema e a hospedagem. Fiz a instalação e em pou
 Demorei mais uns 7 meses para escrever o primeiro post. Eu estava  sem ideia do que escrever. Na época, trabalhava em uma migração entre banco de dados na empresa. Eu estava criando  um Docker para instalar o MySQL e o Oracle, o que foi um  grande desafio, principalmente com a Oracle.
 Após terminar a configuração, queria guardar o passo a passo para futuras consultas. Então lembrei do blog, escrevi o primeiro post, publiquei e fiquei muito feliz com isso. A partir daquele momento, o blog se transformou em um espaço onde eu registrava tudo o que aprendia e não queria esquecer.
 
-## Minha frustração com o WorPress
+## Minha frustração com o WordPress
 Essa foi uma breve história do porquê eu decidir criar um blog, mas depois de alguns anos eu comecei  a não gostar do layout do meu site e do seu desempenho , principalmente na parte mobile, não estava legal.
 Nos testes da pagespeed sempre gerava notas baixas e isso me frustava, então eu tentava otimizar: adicionava plugins para gerenciar cache, plugins para reduzir o css e o js, e ainda mais plugins para melhorar o desempenho, plugins para configurar formulário, plugin para gerenciar o adsense e o Analytics.
 Enfim, eu estava programando "orientado a plugin", com tantos plugins instalados no  wordpress, o blog começou a  ficar muito pesado o 
