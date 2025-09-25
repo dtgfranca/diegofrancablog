@@ -13,7 +13,7 @@ Foi então que tive a ideia de criar um blog, algo que eu pudesse concluir rapid
 Escolhi o WordPress, comprei um tema e a hospedagem. Fiz a instalação e em poucas horas já estava tudo configurado e publicado. Fiquei muito feliz, pois finalmente tinha concluído um projeto.
 
 Demorei mais uns 7 meses para escrever o primeiro post. Eu estava  sem ideia do que escrever. Na época, trabalhava em uma migração entre banco de dados na empresa. Eu estava criando  um Docker para instalar o MySQL e o Oracle, o que foi um  grande desafio, principalmente com a Oracle.
-Após terminar a configuração, queria guardar o passo a passo para futuras consultas. Então lembrei do blog, escrevi o primeiro post [colocar link do post aqui], publiquei e fiquei muito feliz com isso. A partir daquele momento, o blog se transformou em um espaço onde eu registrava tudo o que aprendia e não queria esquecer.
+Após terminar a configuração, queria guardar o passo a passo para futuras consultas. Então lembrei do blog, escrevi o primeiro post, publiquei e fiquei muito feliz com isso. A partir daquele momento, o blog se transformou em um espaço onde eu registrava tudo o que aprendia e não queria esquecer.
 
 ## Minha frustração com o wordpress
 Essa foi uma breve história do porquê eu decidir criar um blog, mas depois de alguns anos eu comecei  a não gostar do layout do meu site e do seu desempenho , principalmente na parte mobile, não estava legal.
