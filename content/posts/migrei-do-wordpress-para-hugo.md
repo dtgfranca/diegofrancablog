@@ -4,7 +4,7 @@ date: 2025-09-24T16:33:47-03:00
 draft: false
 ---
 
-Bom, creio que vocês reparam que o blog teve um mudança no seu layout. Vou explicar para vocês o porquê
+Bom, creio que vocês repararam que o blog teve um mudança no seu layout. Vou explicar para vocês o porquê
 eu fiz essa mudança radical no meu blog, mas antes vou contar a história desde o início.
 
 ## Porque decidir criar um blog
