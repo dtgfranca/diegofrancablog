@@ -120,10 +120,10 @@ Vou deixar uma tabela de comparativo entre o Hugo e o Wordpress para que vocês 
 Fazendo o teste no Pagespeed:
 
 Celular
-{{< figure src="/images/2025/9/pagespeedcelular.png" alt="Descrição da imagem" caption="Legenda da imagem" >}}
+{{< figure src="/images/2025/9/pagespeedcelular.png" alt="Descrição da imagem" caption="" >}}
 
 Desktop
-{{< figure src="/images/2025/9/pagespeeddesktop.png" alt="Descrição da imagem" caption="Legenda da imagem" >}}
+{{< figure src="/images/2025/9/pagespeeddesktop.png" alt="Descrição da imagem" caption="" >}}
 
 
 Para mim, a migração foi libertadora: agora tenho um site mais leve, simples e rápido. Se você também sente que o WordPress está pesado, recomendo testar o Hugo.
