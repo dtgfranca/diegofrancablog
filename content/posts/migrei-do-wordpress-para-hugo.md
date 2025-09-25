@@ -15,7 +15,7 @@ Escolhi o WordPress, comprei um tema e a hospedagem. Fiz a instalação e em pou
 Demorei mais uns 7 meses para escrever o primeiro post. Eu estava  sem ideia do que escrever. Na época, trabalhava em uma migração entre banco de dados na empresa. Eu estava criando  um Docker para instalar o MySQL e o Oracle, o que foi um  grande desafio, principalmente com a Oracle.
 Após terminar a configuração, queria guardar o passo a passo para futuras consultas. Então lembrei do blog, escrevi o primeiro post, publiquei e fiquei muito feliz com isso. A partir daquele momento, o blog se transformou em um espaço onde eu registrava tudo o que aprendia e não queria esquecer.
 
-## Minha frustração com o wordpress
+## Minha frustração com o WorPress
 Essa foi uma breve história do porquê eu decidir criar um blog, mas depois de alguns anos eu comecei  a não gostar do layout do meu site e do seu desempenho , principalmente na parte mobile, não estava legal.
 Nos testes da pagespeed sempre gerava notas baixas e isso me frustava, então eu tentava otimizar: adicionava plugins para gerenciar cache, plugins para reduzir o css e o js, e ainda mais plugins para melhorar o desempenho, plugins para configurar formulário, plugin para gerenciar o adsense e o Analytics.
 Enfim, eu estava programando "orientado a plugin", com tantos plugins instalados no  wordpress, o blog começou a  ficar muito pesado o 
@@ -41,7 +41,7 @@ Agora que contei minha experiência, vou mostrar como fiz a migração passo a p
 
 ## Iniciando a migração
 Instalando o Hugo:
-Essa instalação estou fazendo em minha máquina pessoal com o Ubuntu 24.04.3 LTS, nessa parte eu tive um problema instalando o hugo via snap. Eu recomendo que a instalação, caso esteja utilizando o linux, que você acesse o repositorio 
+Essa instalação estou fazendo em minha máquina pessoal com o Ubuntu 24.04.3 LTS, nessa parte eu tive um problema instalando o Hugo via snap. Eu recomendo que a instalação, caso esteja utilizando o linux, que você acesse o repositorio 
 do github:
 https://github.com/gohugoio/hugo/releases
 Procure pelo formato que vocês acharem mais conveniente, no meu caso foi o .deb, baixe o arquivo e faça a instalação.
@@ -85,13 +85,13 @@ $ ./bin/wp2hugo --source wordpress-export.xml --download-media
 - --source : Caminho do seu arquivo xml gerado pelo WordPress
 - --download-media :  Esse parâmetro ele faz o download de todas as imagens dos seus posts, caso nao passar ele nao faz o download das imagens. 
 
-Esse comando ele irá gerar um arquivo  com todos os posts do wordpress já no formato do hugo. Entre dentro do diretorio gerado e execute o comando:
+Esse comando ele irá gerar um arquivo  com todos os posts do wordpress já no formato do Hugo. Entre dentro do diretorio gerado e execute o comando:
 
 ```
 hugo server
 ```
 
-E você verá todo o seu site já no padrão hugo, pronto para ser publicado. Nesse post não vou mostrar o passo a passo para a publicação, creio que para quem
+E você verá todo o seu site já no padrão Hugo, pronto para ser publicado. Nesse post não vou mostrar o passo a passo para a publicação, creio que para quem
 já mantém um site/blog em  wordpress seja mais tranquilo para fazer um deploy no Netlify ou no GitHub Pages, vou deixar o link aqui desse dois, mas no site existem várias outras formas do deploy :
 
 Netifly:
