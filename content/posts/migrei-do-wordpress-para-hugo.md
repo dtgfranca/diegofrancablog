@@ -25,6 +25,58 @@ Comecei a ler sobre os sites estátics como o Hugo , Jekkil entre outros, mas fa
 comecei a acompanhar o blog do akita(akita.com.br) e em uma publicação tinha algo falando sobre como ele tinha feito o seu novo blog, li, gostei foi entao que entrei no site do hugo comecei a ler e depois pensei: "Posso fazer um teste com meu blo para ver se vou gostar".
 Ahhh não teve outro assim que li a documentação e vi que tem como eu configurar meus posts para uma data futura , facil de configurar, fácil de fazer o deploy o githubpage e netfly e o layout limpo, sem firulas de css e js foi amor a priimeira instalaçao sr, já fiz a migração do meu blog em wordpress para o hugo.
 
-Depois dessa longa história, quero mostrar para vocês se assim como eu não está satisfeito com seu blog em wordpress ou quer criar um blog simples, uma landingpage simples aqui estará o passo a passo de como fazer isso.
+Agora vou mostar um passo a passo de como eu fiz a migração, mas no site do próprio hugo tem outras formas de fazer isso.
+Instalando o Hugo:
+Essa instalação estou fazendo em minha máquina pessoal com o Ubuntu 24.04.3 LTS, nessa parte eu tive um problema instalando o hugo via snap. Eu recomendo que a instalação, caso esteja utilizando o linux, que você acesse o repositorio 
+do github:
+https://github.com/gohugoio/hugo/releases
+Procure pelo formato que vocês acharem mais conveniente, no meu caso foi o .dev,  e baixe o arquivo e faça a instalação.
 
-Exportando os dados do wordpress:
+Para conferir se está tudo certo, abra o terminal e digite:
+hugo version
+
+Exportando dados do wordpress:
+1 - Acesse o wordpress e na opção ferramentas, selecione a o opção exportar e selecione todos os posts, com isso o wordpress vai gerar um arquivo com a extensão xml
+
+Ocnvertendo para o Hugo 
+Em posse desse arquivo, nós iremos agora converter esse arquivo para o formato do hugo. Com isso vamos instalar uma ferramenta CLI chamada wp2hugo.
+
+Primerio fazemos o clone:
+$ git clone git@github.com:ashishb/wp2hugo.git
+
+Entramos no diretório:
+$ cd wp2hugo/src/wp2hugo
+
+Agora fazemos o build:
+$ make build_prod
+
+Com isso dentro desse diretório wp2hugo/src/wp2hugo/bin, vamos ter um arquivo chamado wp2hugo. Agora podemos executar esse arquivo:
+./bin/wp2hugo --source wordpress-export.xml --download-media
+
+Esse comando ele irá gerar um arquivo  com todos os posts do wordpress já no formato do hugo. Entre dentro do diretorio gerado e execute o comando:
+hugo server 
+E você verá todo o seu site já no padrão hugo, pronto para ser publicado. Nesse post não vou mostrar o passo a passo para a publicação, creio que para quem
+já mantem um wordpress seja mais tranquilo para fazer um deploy no netfly ou no githubpage, vou deixar o link aqui desse dois, mas no site existem várias outras formas do deploy :
+
+Netifly
+https://gohugo.io/host-and-deploy/host-on-netlify/#article
+https://gohugo.io/host-and-deploy/host-on-github-pages/
+
+Vou deixar uma tabela de comparativo entre o Hugo e o Wordpress para que vocês possam avaliar com mais calma:
+
+### WordPress vs Hugo: o que muda?
+
+| **Critério**            | **WordPress**                                                                 | **Hugo**                                                                 |
+|--------------------------|-------------------------------------------------------------------------------|---------------------------------------------------------------------------|
+| **Performance**          | Depende de banco de dados, PHP e plugins. Pode ficar pesado.                 | Gera páginas estáticas, super rápidas e leves.                           |
+| **Complexidade**         | Muitos plugins, temas e configurações.                                        | Estrutura simples, posts em Markdown, foco no conteúdo.                   |
+| **Manutenção**           | Requer atualizações de plugins, temas e segurança.                            | Sem banco de dados nem plugins: quase zero manutenção.                    |
+| **Flexibilidade**        | Ecossistema enorme (plugins para tudo).                                       | Flexível via código e templates, mas sem “instalar e usar” facilmente.    |
+| **Facilidade de uso**    | Painel amigável, bom para quem não programa.                                  | Precisa lidar com CLI e Git, mais técnico.                                |
+| **Deploy**               | Necessita servidor (PHP/MySQL).                                               | Pode ser hospedado grátis no GitHub Pages, Netlify ou Vercel.             |
+| **Agendamento de posts** | Nativo, muito prático.                                                        | Também suporta datas futuras via configuração no front matter.             |
+| **Custo**                | Hospedagem + possíveis temas/premium/plugins.                                 | Hospedagem gratuita ou muito barata.                                      |
+
+
+Para mim, a migração foi libertadora: agora tenho um site mais leve, simples e rápido. Se você também sente que o WordPress está pesado, recomendo testar o Hugo.
+
