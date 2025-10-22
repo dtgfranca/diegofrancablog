@@ -15,6 +15,10 @@ markup:
   # enable hextra syntax highlight
   highlight:
     noClasses: false
+# Configuração do Disqus
+services:
+  disqus:
+    shortname: 'blog-diegofranca-dev'  # Seu shortname do Disqus
 
 menu:
   main:
@@ -48,6 +52,8 @@ params:
   navbar:
     displayTitle: true
     displayLogo: false
+  # Configuração adicional do Disqus
+  disqusShortname: 'blog-diegofranca-dev'
 
   footer:
     displayCopyright: false
