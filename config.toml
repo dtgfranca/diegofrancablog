@@ -9,6 +9,10 @@ params.customCSS = ["css/custom.css"]
 [params.google.analytics]
 id = "G-TE926Z2M83"
 
+[services]
+[services.disqus]
+shortname = 'blog-diegofranca-dev'
+
 # Menu
 [menu]
 
