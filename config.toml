@@ -6,7 +6,8 @@ relativeURLs = true
 params.customCSS = ["css/custom.css"]
 
 # Analistics
-googleAnalytics = "G-TE926Z2M83"
+[params.google.analytics]
+id = "G-TE926Z2M83"
 
 # Menu
 [menu]
