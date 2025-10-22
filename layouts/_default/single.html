@@ -38,7 +38,7 @@
             <div class="content">
                 {{ .Content }}
                 teste do disquus aqui 1234
-
+                {{ partial "disqus.html" . }}
             </div>
             {{- partial "components/last-updated.html" . -}}
             {{- if (site.Params.blog.article.displayPagination | default true) -}}
