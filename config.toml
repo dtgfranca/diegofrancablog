@@ -8,6 +8,8 @@ params.customCSS = ["css/custom.css"]
 # Analistics
 [params.google.analytics]
 id = "G-TE926Z2M83"
+[params]
+disqusShortname = "meu-shortname-disqus"
 
 [services]
   [services.disqus]
