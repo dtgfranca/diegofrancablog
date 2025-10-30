@@ -301,9 +301,102 @@ class chatCommand extends Command
 
 ````
 Como o código acima pode ser um pouco complicado, vou explicar o passo a passo.:
+
+## Entendendo passoa a passo
+1. Instanciamos o cliente que vamos usar para conectar ao Ollama:
+````
+$client = \ArdaGnsrn\Ollama\Ollama::client();
+````
+
+2. Criamos um textarea para que o usuário digite a pergunta:
+````
+$pergunta = textarea('Escreva aqui');
+````
+
+3. Criamos o embeddings da pergunta, para que possamos fazer o cálculo da similaridade
+````
+$embeddingPergunta = $this->gerarEmbeddingSimples($pergunta);
+````
+4. Trazemos os documentos embendados do banco de dados e armazenamos em uma variável:
+````
+$documentos = DB::table('documents_embeddings')->get();
+````
+
+5. Agora fazemos o calculo  de similaridade com o embedding da pergunta e dos arquivos do banco e 
+adicinamos no arry o id do documento no banco, e o resutlado da similaridade:
+````
+   $ranked = [];
+        foreach ($documentos as $doc) {
+            $emb = json_decode($doc->embedding, true);
+            $ranked[$doc->id] = $this->similaridade($embeddingPergunta, $emb);
+        }
+````
+6. Ordenamos pela similaridade:
+````
+arsort($ranked);
+````
+
+7. Agora fazemos um iltro trazendo somente os 3 melhores
+````
+    $topDocs = collect(array_keys($ranked))->take(3)
+            ->map(fn($id) => $documentos->firstWhere('id', $id))
+            ->pluck('content')
+            ->implode("\n\n");
+````
+
+8. Montamos o prompt combinado com o prompt do sistema + o prompt escrito pelo usuário + o 
+context que nada mais é os arquivos que buscamos no pass 7:
+````
+$prompt = "Você é um assistente que responde apenas com base no conteúdo abaixo.
+    Se a resposta não estiver presente no conteúdo, diga: 'Desculpe, a resposta para essa pergunta não está disponível neste documento.'.\n\n" .
+            "---\n" . $topDocs . "---\n\n" .
+            "Pergunta: $pergunta";
+````
+9. Agora vamos criar o model e passar o prompt ao modelo para que ele possa gerar a resposta:
+````
+ $response = $client->chat()->create([
+            'model' => 'qwen2.5:3b',
+            'messages' => [
+
+                ['role' => 'user', 'content' => $prompt],
+
+            ],
+        ]);
+````
+
+10. Agora pegaremos a resposta e mostraremos no console:
+````
+ $resultado = $response->message->content;
+ dd($resultado);
+````
 [//]: # (Selecionando os documentos mais parecidos)
-## Enviando para o modelo
+## Rodando via comando o RAG
 
-[//]: # (Montando o prompt final)
+Agora com o nosso código terminado, podemos rodar o comando para ver o resultado.
+Primeiro rodamos o comando para poder inserir os embeddings no banco de dados:
+````
+php artisan embbeding
+````
 
-[//]: # (Rodando via comando php artisan chat)
+Depois com os arquivos inseridos no banco de dados, podemos executar o comando do chat:
+````
+php artisan chat
+````
+Podemos digitar a pergunta e ver o resultado.
+
+### Observações
+Nos meus testes eu fiz algumas perguntas na qual o modelo demorou bastante para responder,
+pois estamos usando um modelo bem simples,simplesmente para ilustrar o funcionamento do RAG.
+
+Algumas perguntas ele não conseguiu responder dentro do documento, mas isso já era esperado
+porque mesmo qeu criamos o embedding ainda o arquivo fica muito grande para o modelo entender e pode gerar
+inconsistência ou alucinações no modelo. 
+
+Para que possamos resolver isso temos alguns passos a seguir para tentar melhorar o modelo:
+1. Criar chunks de cada arquvivos, usar alguma estratégia e cada arquivo nós separarmos por chunks de 500 palavras ou 1000 
+2. Melhorar nosso prompt do sistema que enviamos juntos com o contexto e a pergunta do usuário.
+3. Fazer Fine-tuning do modelo para melhorar o resultado.
+
+Enfim, temos muito ainda que evoluir e melhorar nosso modelo, mas com o passar do tempo vamos aprendendo e melhorando.
+E esses sao assuntos que vamos abordar nos posts futuros. Para que não pegar os próximos posts
+pode me seguir nas redes sociais.
