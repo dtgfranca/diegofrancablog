@@ -81,7 +81,7 @@ Para ilustrar isso, podemos criar uma função simples em php
     }
 ````
 ### Entendendo passoa a passo
-Normalização do texto:
+1. Normalização do texto:
 
  O código transforma tudo em minúsculas e quebra em palavras únicas.
 ````
@@ -90,13 +90,13 @@ $palavras = array_unique(str_word_count(strtolower($texto), 1));
 ````
 Isso garante que “PHP” e “php” sejam tratados como a mesma palavra.
 
-Ordenação:
+2. Ordenação:
 
 Assim o resultado é previsível — duas frases com as mesmas palavras terão o mesmo “embedding”.
 ````
 sort($palavras);
 ````
-Criaçao do vetor numérico:
+3. Criaçao do vetor numérico:
 
 ````
 array_map(fn($p) => crc32($p) % 1000 / 1000, $palavras);
@@ -104,7 +104,8 @@ array_map(fn($p) => crc32($p) % 1000 / 1000, $palavras);
 Cada palavra é transformada em um número usando crc32.
 Esse número é reduzido para algo entre 0 e 1 — simulando o comportamento de um embedding real, que também é uma lista de números flutuantes.
 
-Resultado: 
+4. Resultado:
+
 Com isso, teremos algo parecido com o seguinte:
 ````
 [0.234, 0.678, 0.912]
