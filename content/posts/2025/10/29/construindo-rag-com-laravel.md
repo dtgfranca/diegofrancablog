@@ -66,13 +66,110 @@ Entre no diretório  do projeto e vamos criar um comando no laravel para poder  
 ````
     php artisan create command embeding
 ````
-Abra o arquivo embendingcomand.php e digite o seguinte código:
+Antes de começar a criar embending com ferramentas mais avançadas como qwen2.5:1.5b-embedding, é interessante
+aprendermos os conceitos  de embending simples.
+Para ilustrar isso, podemos criar uma função simples em php
 ````
-digite aqui
+    private function gerarEmbeddingSimples(string $texto): array
+    {
+        // Quebra o texto em palavras únicas e ordenadas
+        $palavras = array_unique(str_word_count(strtolower($texto), 1));
+        sort($palavras);
+    
+        // Cria um hash numérico simples (mock de embedding)
+        return array_map(fn($p) => crc32($p) % 1000 / 1000, $palavras);
+    }
 ````
+### Entendendo passoa a passo
+Normalização do texto:
 
+ O código transforma tudo em minúsculas e quebra em palavras únicas.
+````
+$palavras = array_unique(str_word_count(strtolower($texto), 1));
+
+````
+Isso garante que “PHP” e “php” sejam tratados como a mesma palavra.
+
+Ordenação:
+
+Assim o resultado é previsível — duas frases com as mesmas palavras terão o mesmo “embedding”.
+````
+sort($palavras);
+````
+Criaçao do vetor numérico:
+
+````
+array_map(fn($p) => crc32($p) % 1000 / 1000, $palavras);
+````
+Cada palavra é transformada em um número usando crc32.
+Esse número é reduzido para algo entre 0 e 1 — simulando o comportamento de um embedding real, que também é uma lista de números flutuantes.
+
+Resultado: 
+Com isso, teremos algo parecido com o seguinte:
+````
+[0.234, 0.678, 0.912]
+
+````
 [//]: # (Salvando no MySQL com embeddings simples)
 
+No codigo abaixo, a gente vai passar  onde fica os nossos documentos, e vamos gerar o embedding de cada arquivo e salvar no banco de dados.
+````
+    public function handle(): void
+    {
+        $arquivos = glob('/var/www/projeto/ollama-php/docs/*.md');
+        foreach ($arquivos as $arquivo) {
+            $conteudo = file_get_contents($arquivo);
+            $this->info($arquivo);
+            $embedding = $this->gerarEmbeddingSimples($conteudo);
+            DB::table('documents_embeddings')->insert([
+                'filename' => basename($arquivo),
+                'content' => $conteudo,
+                'embedding' => json_encode($embedding),
+            ]);
+        }
+    }
+````
+
+Exemplo completo do comando embeding:
+````
+<?php
+
+namespace App\Console\Commands;
+
+use Illuminate\Console\Command;
+use Illuminate\Support\Facades\DB;
+
+class embedingsCommand extends Command
+{
+    protected $signature = 'embedings';
+
+    protected $description = 'Command description';
+
+    public function handle(): void
+    {
+        $arquivos = glob('/var/www/projeto/ollama-php/docs/*.md');
+        foreach ($arquivos as $arquivo) {
+            $conteudo = file_get_contents($arquivo);
+            $embedding = $this->gerarEmbeddingSimples($conteudo);
+            DB::table('documents_embeddings')->insert([
+                'filename' => basename($arquivo),
+                'content' => $conteudo,
+                'embedding' => json_encode($embedding),
+            ]);
+        }
+    }
+
+    private function gerarEmbeddingSimples(string $texto): array
+    {
+        // Quebra o texto em palavras únicas e ordenadas
+        $palavras = array_unique(str_word_count(strtolower($texto), 1));
+        sort($palavras);
+
+        // Cria um hash numérico simples (mock de embedding)
+        return array_map(fn($p) => crc32($p) % 1000 / 1000, $palavras);
+    }
+}
+````
 [//]: # (Explicando “chunking”)
 
 ## Buscando o contéudo por similaridade
