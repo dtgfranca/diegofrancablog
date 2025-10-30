@@ -14,34 +14,39 @@ inicial, mas que vai servir de base para posts futuros, pois esse rag eu quero e
 Então sem mais delongas, vamos iniciar!!!
 
 ## O que é RAG?
-[//]: # (O que é RAG &#40;explicado de forma leve&#41;)
-RAG(Retrieval-Augmented Generation), é uma técnica utilizada para poder aumentar a qualidade de um modelo de IA, com essa
-técnica você pode deixar seu modelo mais atualizado e mais inteligente. Podemos falar que precisamos de usar um RAG é quando precisamos
-de criar  sistemas para dentro de uma empresa e que precise de ler alguma documentação, como por exemplo, um sistema de suporte. Nesse caso se deixarmos que o modelo
+
+RAG(Retrieval-Augmented Generation), é uma técnica utilizada para poder aumentar a qualidade das resposta de um modelo de IA, com essa
+técnica você pode aumentar a quantidade de informação que o seu modelo pode trabalhar. 
+Podemos falar que, precisamos de usar um RAG é quando precisamos de criar  sistemas que necessita de uma informação específica como  ler alguma documentação da empresa, como por exemplo, um sistema de suporte. Nesse caso se deixarmos que o modelo
 acesse a web ele não irá encontrar as respostas corretas e vai gerar alucinações e inconsistências nessas respostas deixando o modelo com respostas que nao 
 vai agradar o usuário. 
 
 
 
-[//]: # (Por que fazer localmente &#40;privacidade, custo, aprendizado&#41;)
+
 ## Preparando o ambiente
-[//]: # (Criar o projeto Laravel e instalar o pacote arda/ollama-php)
-Para da sequencia ao nosso projeto vamos instalar o laravel e o arda-ollama-php.
+
+Para da sequência ao nosso projeto vamos instalar o laravel e oollama-php.
 ````
     composer create-project laravel/laravel rag-laravel
     cd rag-laravel    
 ````
-Depois que fizemos a instalação do laravel, vamos instllar o arda-ollama, esse pacote é uma bibiloteca para quepossamos acessar o ollama
+Depois que fizemos a instalação do laravel, vamos instllar o arda-ollama, esse pacote é uma bibiloteca para que possamos acessar o ollama
 
 ````
 composer require ardagnsrn/ollama-php
 
 ````
-[//]: # (Instalar Ollama e rodar um modelo &#40;qwen2.5:1.5b&#41;)
-Já que estamos com o laravel e o pacote devidamente instaladosl, vamos agora instalar o Ollama e rodar um modelo. Para esse 
+
+Já que estamos com o laravel e o pacote devidamente instalados, vamos agora instalar o Ollama e rodar um modelo. Para esse 
 exemplo eu estou usando  o modelo qwen2.5:1.5b, mais Ubuntu 22.04. Para quem está usando outro sistema operacional, sugiro
 entrar no site do Ollama e verificar qual é a forma de instalar(https://ollama.com/download) o Ollama no seu sistema.
 
+Execute o comando abaixo para poder instalar o Ollama:
+
+````
+curl -fsSL https://ollama.com/install.sh | sh
+````
 Após a instalaçao do ollama, vamos rodar o modelo. E para isso  vamos usar o comando para fazer um pull do modelo:
 ````
 ollama pull qwen2.5:1.5b
@@ -51,7 +56,7 @@ A escolha desse modelo: qwen2.5:1.5b , foi devido a grande maioria das pessoas t
 vai rodar melhor em seu computador, mas em consequencia ele pode demorar um pouco mais para responder.
 
 ## Indexando os documentos
-[//]: # (Lendo .md)
+
 Agora com tudo praticamente configurado é hora de codar. Primeiro vamos ler os documentos que vamos usar no nosso RAG, 
 depois iremos  criar embendings para cada um dos documentos e salvar no banco de dados.
 
@@ -111,7 +116,6 @@ Com isso, teremos algo parecido com o seguinte:
 [0.234, 0.678, 0.912]
 
 ````
-[//]: # (Salvando no MySQL com embeddings simples)
 
 No codigo abaixo, a gente vai passar  onde fica os nossos documentos, e vamos gerar o embedding de cada arquivo e salvar no banco de dados.
 ````
@@ -171,7 +175,6 @@ class embedingsCommand extends Command
     }
 }
 ````
-[//]: # (Explicando “chunking”)
 
 ## Buscando o contéudo por similaridade
 Agora que temos no nosso banco de dados os documentos embedados agora é hora de fazer a busca. 
@@ -185,7 +188,7 @@ Exemplo:
     Texto B: "Um felino descansa no sofá"
 Eles são diferentes em palavras, mas muito semelhantes em significado.
 Um modelo de embedding (como o usado em RAG) vai gerar vetores próximos no espaço vetorial, e a similaridade entre eles será alta (por exemplo, 0.92 em uma escala de 0 a 1).
-[//]: # (Criando uma função de similaridade)
+
 Nosso trecho de código da função similaridade:
 ````
   private function similaridade(array $a, array $b): float
@@ -369,7 +372,7 @@ $prompt = "Você é um assistente que responde apenas com base no conteúdo abai
  $resultado = $response->message->content;
  dd($resultado);
 ````
-[//]: # (Selecionando os documentos mais parecidos)
+
 ## Rodando via comando o RAG
 
 Agora com o nosso código terminado, podemos rodar o comando para ver o resultado.
