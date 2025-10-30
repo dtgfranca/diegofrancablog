@@ -174,9 +174,133 @@ class embedingsCommand extends Command
 [//]: # (Explicando “chunking”)
 
 ## Buscando o contéudo por similaridade
+Agora que temos no nosso banco de dados os documentos embedados agora é hora de fazer a busca. 
+Mas primeiro precisamos criar uma função para poder calcular a similaridade entre dois embeddings.
 
+O que é similaridade?
+É uma medda que indica o quanto dois textos, frases ou palavras ouvetores são semelhantes. Ela não compara apenas letras ou palavras
+idênticas, mas sim o sentido e a estrutura do texto.
+Exemplo:
+    Texto A:  "O gato está dormindo no sofá"
+    Texto B: "Um felino descansa no sofá"
+Eles são diferentes em palavras, mas muito semelhantes em significado.
+Um modelo de embedding (como o usado em RAG) vai gerar vetores próximos no espaço vetorial, e a similaridade entre eles será alta (por exemplo, 0.92 em uma escala de 0 a 1).
 [//]: # (Criando uma função de similaridade)
+Nosso trecho de código da função similaridade:
+````
+  private function similaridade(array $a, array $b): float
+    {
+        $inter = count(array_intersect(array_keys($a), array_keys($b)));
+        return $inter / max(count($a), count($b));
+    }
+````
+### Entendendo passoa a passo
+1. Pega a chaves:
+   Pegam só as chaves dos dois arrays.
+````
+array_keys($a) e array_keys($b)
+````
+2. Interesençao do array:
+````
+array_intersect(array_keys($a), array_keys($b))
+````
+3. Conta as palavras:
+````
+count(array_intersect(array_keys($a), array_keys($b)));
+````
+4. Faz a proporção de chaves iguais:
+````
+$inter / max(count($a), count($b));
+````
+O resultado é um número entre 0 e 1:
 
+1 = arrays totalmente parecidos (todas as chaves iguais)
+
+0 = arrays completamente diferentes
+
+O código completo do nosso chat:
+````
+<?php
+
+namespace App\Console\Commands;
+
+use Illuminate\Console\Command;
+use Illuminate\Support\Facades\DB;
+use function Laravel\Prompts\textarea;
+use function Laravel\Prompts\select;
+
+class chatCommand extends Command
+{
+    protected $signature = 'chat-test';
+
+    protected $description = 'Command description';
+
+    public function handle()
+    {
+
+
+        $client = \ArdaGnsrn\Ollama\Ollama::client();
+
+
+
+        $pergunta = textarea('Escreva aqui');
+        $embeddingPergunta = $this->gerarEmbeddingSimples($pergunta);
+
+        // Carrega embeddings do banco
+        $documentos = DB::table('documents_embeddings')->get();
+
+        $ranked = [];
+        foreach ($documentos as $doc) {
+            $emb = json_decode($doc->embedding, true);
+            $ranked[$doc->id] = $this->similaridade($embeddingPergunta, $emb);
+        }
+        // Ordena por similaridade
+        arsort($ranked);
+
+        // Pega os 3 melhores
+        $topDocs = collect(array_keys($ranked))->take(3)
+            ->map(fn($id) => $documentos->firstWhere('id', $id))
+            ->pluck('content')
+            ->implode("\n\n");
+        // Monta o prompt com o contexto combinado
+        $prompt = "Você é um assistente que responde apenas com base no conteúdo abaixo.
+    Se a resposta não estiver presente no conteúdo, diga: 'Desculpe, a resposta para essa pergunta não está disponível neste documento.'.\n\n" .
+            "---\n" . $topDocs . "---\n\n" .
+            "Pergunta: $pergunta";
+
+        $response = $client->chat()->create([
+            'model' => 'qwen2.5:3b',
+            'messages' => [
+
+                ['role' => 'user', 'content' => $prompt],
+
+            ],
+        ]);
+
+        $resultado = $response->message->content; // 'Ah, taxes... *chew chew* Hmm, not really sure how to help with that.';
+        dd($resultado);
+    }
+
+    // Calcula similaridade (cosine-like simplificado)
+    private function similaridade(array $a, array $b): float
+    {
+        $inter = count(array_intersect(array_keys($a), array_keys($b)));
+        return $inter / max(count($a), count($b));
+    }
+
+    private function gerarEmbeddingSimples(string $texto): array
+    {
+        // Quebra o texto em palavras únicas e ordenadas
+        $palavras = array_unique(str_word_count(strtolower($texto), 1));
+        sort($palavras);
+
+        // Cria um hash numérico simples (mock de embedding)
+        return array_map(fn($p) => crc32($p) % 1000 / 1000, $palavras);
+    }
+}
+
+````
+Como o código acima pode ser um pouco complicado, vou explicar o passo a passo.:
 [//]: # (Selecionando os documentos mais parecidos)
 ## Enviando para o modelo
 
