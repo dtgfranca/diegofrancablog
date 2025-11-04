@@ -2,18 +2,6 @@
 baseURL = "https://diegofranca.dev/"
 relativeURLs = true
 
-defaultContentLanguage = "pt"
-defaultContentLanguageInSubdir = true
-
-[languages]
-  [languages.pt]
-    weight = 1
-    languageName = "Português"
-
-  [languages.en]
-    weight = 2
-    languageName = "English
-
 # Configurações gerais
 params.customCSS = ["css/custom.css"]
 
@@ -21,8 +9,7 @@ params.customCSS = ["css/custom.css"]
 [params.google.analytics]
 id = "G-TE926Z2M83"
 [params]
-  disqusShortname = "meu-shortname-disqus"
-  enableLanguageSwitch = true
+disqusShortname = "meu-shortname-disqus"
 
 [services]
   [services.disqus]
