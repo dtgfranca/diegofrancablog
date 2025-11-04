@@ -47,7 +47,8 @@ tags:
   - php
 title: Criando um servidor Git localmente
 url: /2024/03/16/criando-um-servidor-git-localmente/
-
+lang: pt-br
+translationKey: "local-git-server"
 ---
 Olá pessoal!
 
