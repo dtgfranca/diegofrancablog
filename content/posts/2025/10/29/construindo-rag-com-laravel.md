@@ -1,81 +1,89 @@
 ---
 title: "Construindo Rag Com Laravel"
 date: 2025-10-29T21:44:10-03:00
-draft: true
+draft: false
+tags: ["rag", "laravel", "ai", "ollama"]
 ---
 
-Venho estudando ultimamente sobre IA como fazer prompts mais eficientes, como construir um RAG, como fazer um finetunning de um modelo de IA. 
-E para que eu possa fixar mais o meu conhecimento resolvir criar um  projeto com laravel onde eu posso fazer de uma forma prática. Ainda mais 
-que hoje em dia está muito falado sobre IA e Machine Learning, mas não vejo muito conteúdo em português falando sobre RAG com php.
+Venho estudando ultimamente sobre IA: como fazer prompts mais eficientes, como construir um RAG e como fazer um fine-tuning de um modelo de IA.
+E, para que eu possa fixar mais o meu conhecimento, resolvi criar um projeto com Laravel onde eu possa praticar de forma mais concreta. Ainda mais que, nos dias de hoje, só se fala sobre IA, mas não vejo muito conteúdo em português falando sobre como criar RAG com PHP.
 
-Meu objetivo com esse post é criar um RAG bem simples  onde eu possa mostrar detalhe por detalhe todo o processo de criaçao. Seria um post
-inicial, mas que vai servir de base para posts futuros, pois esse rag eu quero evoluí-lo e a cada parte da melhoria quero deixar regisrado aqui no blog.
+Meu objetivo com esse post é criar um RAG bem simples, onde eu possa mostrar detalhe por detalhe todo o processo de criação. Seria um projeto básico, mas que vai servir de base para posts futuros. Quero, aos poucos, implementar novos recursos nesse projeto e registrar os passos que eu fizer.
 
-Então sem mais delongas, vamos iniciar!!!
+Então, sem mais delongas, vamos iniciar!
 
 ## O que é RAG?
 
-RAG(Retrieval-Augmented Generation), é uma técnica utilizada para poder aumentar a qualidade das resposta de um modelo de IA, com essa
-técnica você pode aumentar a quantidade de informação que o seu modelo pode trabalhar. 
-Podemos falar que, precisamos de usar um RAG é quando precisamos de criar  sistemas que necessita de uma informação específica como  ler alguma documentação da empresa, como por exemplo, um sistema de suporte. Nesse caso se deixarmos que o modelo
-acesse a web ele não irá encontrar as respostas corretas e vai gerar alucinações e inconsistências nessas respostas deixando o modelo com respostas que nao 
-vai agradar o usuário. 
+RAG (Retrieval-Augmented Generation) é uma técnica utilizada para aumentar a qualidade das respostas de um modelo de IA. Com essa técnica, você pode ampliar a quantidade de informações que o seu modelo pode utilizar.
 
+Utilizamos RAG quando precisamos de informações específicas e atualizadas, como ler documentação de uma empresa, acessar dados em um banco de dados ou, por exemplo, em um sistema de suporte.
+Caso não utilizemos essa técnica, o modelo pode gerar alucinações ou inconsistências nas respostas.
 
+![Imagem RAG](/images/rag.jpg)
 
 
 ## Preparando o ambiente
 
-Para da sequência ao nosso projeto vamos instalar o laravel e oollama-php.
+Para dar sequência ao nosso projeto, precisamos instalar o Laravel e o ollama-php.
+Primeiro, faremos a instalação do Laravel usando o Composer:
+
 ````
     composer create-project laravel/laravel rag-laravel
     cd rag-laravel    
 ````
-Depois que fizemos a instalação do laravel, vamos instllar o arda-ollama, esse pacote é uma bibiloteca para que possamos acessar o ollama
+Depois que fizemos a instalação do Laravel, instalamos o arda-ollama. Esse pacote é uma biblioteca que permite acessar o Ollama diretamente pelo PHP.
 
 ````
 composer require ardagnsrn/ollama-php
 
 ````
 
-Já que estamos com o laravel e o pacote devidamente instalados, vamos agora instalar o Ollama e rodar um modelo. Para esse 
-exemplo eu estou usando  o modelo qwen2.5:1.5b, mais Ubuntu 22.04. Para quem está usando outro sistema operacional, sugiro
-entrar no site do Ollama e verificar qual é a forma de instalar(https://ollama.com/download) o Ollama no seu sistema.
+Já que estamos com o Laravel e o pacote devidamente instalados, iremos instalar o Ollama e rodar um modelo.
+Para este exemplo, estou usando o modelo qwen2.5:1.5b, no sistema operacional Ubuntu 22.04 e utilizando arquivo markdown.
 
-Execute o comando abaixo para poder instalar o Ollama:
+Caso você esteja usando outro sistema operacional, recomendo acessar o site do Ollama e seguir as instruções de instalação:
+https://ollama.com/download
+
+Execute o comando abaixo para instalar o Ollama:
 
 ````
 curl -fsSL https://ollama.com/install.sh | sh
 ````
-Após a instalaçao do ollama, vamos rodar o modelo. E para isso  vamos usar o comando para fazer um pull do modelo:
+Após a instalação do Ollama, vamos rodar o modelo. Para isso, usamos o comando para fazer o pull do modelo:
+
 ````
 ollama pull qwen2.5:1.5b
 
 ````
-A escolha desse modelo: qwen2.5:1.5b , foi devido a grande maioria das pessoas terem um computador não muito robusto e com esse modelo
-vai rodar melhor em seu computador, mas em consequencia ele pode demorar um pouco mais para responder.
+A escolha do modelo qwen2.5:1.5b foi feita porque a maioria das pessoas não possui um computador muito robusto, e esse modelo tende a rodar melhor em máquinas com menos recursos.
+Por outro lado, como ele é menor, pode demorar um pouco mais para responder e sua qualidade pode ser inferior quando comparado a modelos maiores.
 
 ## Indexando os documentos
 
-Agora com tudo praticamente configurado é hora de codar. Primeiro vamos ler os documentos que vamos usar no nosso RAG, 
-depois iremos  criar embendings para cada um dos documentos e salvar no banco de dados.
+Agora, com tudo praticamente configurado, é hora de colocar a  mão na massa.
+Primeiro, vamos ler os documentos que serão usados no nosso RAG e, em seguida, criar embedding para cada um deles e salvar no banco de dados.
 
-Mas antes de  iniciar, vamos entender como funciona os embeddings e o porquê deles.
-A tecnica do embedding é para que possamos passar de forma mais precisa dentro do nosso modelo, para que ele possa entender melhor o que 
-estamos falando. Se passarmos por exemplo um livro muito grande para ele, pode ser que a informação seja tão grande e o modelo acabe gerando respostas 
-diferentes do que era esperdo, então criamos para cada arquivo um embedding(também podemos criar chuncks para melhorar) e passamos esse embedding para o modelo.
-Então na hora de trazer uma respostas para o usuario ele vai transformar a pergunta em um embedding e vai fazer um calculo de similaridade com os embeddings
-do banco de dados e vai retornar as respostas mais parecidas.
 
-Entre no diretório  do projeto e vamos criar um comando no laravel para poder  fazer o embending.
+Mas antes de iniciar, é importante entender como funcionam os embedding e por que eles são necessários.
+A técnica de embedding nos permite representar textos de forma que o modelo consiga compreender melhor o seu significado.
+
+Se, por exemplo, enviarmos um livro muito grande diretamente para o modelo, a quantidade de informação pode ser tão grande que ele pode acabar gerando respostas diferentes do que esperamos.
+Por isso, criamos um embedding para cada arquivo (e, se necessário, dividimos o texto em chunks para melhorar a precisão) e armazenamos esses embedding no banco.
+
+Quando o usuário faz uma pergunta, essa pergunta também é convertida em um embedding.
+O sistema então faz um cálculo de similaridade entre o embedding da pergunta e os embedding armazenados no banco de dados, retornando os trechos mais relevantes para construir a resposta.
+
+Agora, entre no diretório do projeto e vamos criar um comando no Laravel para gerar os embedding.
+
 ````
-    php artisan create command embeding
+    php artisan make:command  embedding
+    
 ````
-Antes de começar a criar embending com ferramentas mais avançadas como qwen2.5:1.5b-embedding, é interessante
-aprendermos os conceitos  de embending simples.
-Para ilustrar isso, podemos criar uma função simples em php
+Antes de começar a criar embedding com ferramentas mais avançadas, como o modelo qwen2.5:1.5b-embedding, é interessante entendermos primeiro o conceito de embedding de forma simples.
+Para ilustrar isso, podemos criar uma função básica em PHP e adicionar no arquivo criado anteriormente:
+
 ````
-    private function gerarEmbeddingSimples(string $texto): array
+    private function gerarembeddingimples(string $texto): array
     {
         // Quebra o texto em palavras únicas e ordenadas
         $palavras = array_unique(str_word_count(strtolower($texto), 1));
@@ -85,11 +93,13 @@ Para ilustrar isso, podemos criar uma função simples em php
         return array_map(fn($p) => crc32($p) % 1000 / 1000, $palavras);
     }
 ````
-### Entendendo passoa a passo
+### Entendendo passo a passo
+
 1. Normalização do texto:
 
  O código transforma tudo em minúsculas e quebra em palavras únicas.
 ````
+
 $palavras = array_unique(str_word_count(strtolower($texto), 1));
 
 ````
@@ -98,13 +108,15 @@ Isso garante que “PHP” e “php” sejam tratados como a mesma palavra.
 2. Ordenação:
 
 Assim o resultado é previsível — duas frases com as mesmas palavras terão o mesmo “embedding”.
+
 ````
 sort($palavras);
 ````
-3. Criaçao do vetor numérico:
+3. Criação do vetor numérico:
 
 ````
 array_map(fn($p) => crc32($p) % 1000 / 1000, $palavras);
+
 ````
 Cada palavra é transformada em um número usando crc32.
 Esse número é reduzido para algo entre 0 e 1 — simulando o comportamento de um embedding real, que também é uma lista de números flutuantes.
@@ -117,7 +129,8 @@ Com isso, teremos algo parecido com o seguinte:
 
 ````
 
-No codigo abaixo, a gente vai passar  onde fica os nossos documentos, e vamos gerar o embedding de cada arquivo e salvar no banco de dados.
+Adicione o código abaixo dentro do comando embedding, nesse código informamos o diretório onde ficam nossos documentos, geramos o embedding de cada arquivo e salvamos tudo no banco de dados.
+
 ````
     public function handle(): void
     {
@@ -125,8 +138,8 @@ No codigo abaixo, a gente vai passar  onde fica os nossos documentos, e vamos ge
         foreach ($arquivos as $arquivo) {
             $conteudo = file_get_contents($arquivo);
             $this->info($arquivo);
-            $embedding = $this->gerarEmbeddingSimples($conteudo);
-            DB::table('documents_embeddings')->insert([
+            $embedding = $this->gerarembeddingimples($conteudo);
+            DB::table('documents_embedding')->insert([
                 'filename' => basename($arquivo),
                 'content' => $conteudo,
                 'embedding' => json_encode($embedding),
@@ -135,7 +148,8 @@ No codigo abaixo, a gente vai passar  onde fica os nossos documentos, e vamos ge
     }
 ````
 
-Exemplo completo do comando embeding:
+Exemplo completo do comando embedding:
+
 ````
 <?php
 
@@ -155,8 +169,8 @@ class embedingsCommand extends Command
         $arquivos = glob('/var/www/projeto/ollama-php/docs/*.md');
         foreach ($arquivos as $arquivo) {
             $conteudo = file_get_contents($arquivo);
-            $embedding = $this->gerarEmbeddingSimples($conteudo);
-            DB::table('documents_embeddings')->insert([
+            $embedding = $this->gerarembeddingimples($conteudo);
+            DB::table('documents_embedding')->insert([
                 'filename' => basename($arquivo),
                 'content' => $conteudo,
                 'embedding' => json_encode($embedding),
@@ -164,7 +178,7 @@ class embedingsCommand extends Command
         }
     }
 
-    private function gerarEmbeddingSimples(string $texto): array
+    private function gerarembeddingimples(string $texto): array
     {
         // Quebra o texto em palavras únicas e ordenadas
         $palavras = array_unique(str_word_count(strtolower($texto), 1));
@@ -177,19 +191,27 @@ class embedingsCommand extends Command
 ````
 
 ## Buscando o contéudo por similaridade
-Agora que temos no nosso banco de dados os documentos embedados agora é hora de fazer a busca. 
-Mas primeiro precisamos criar uma função para poder calcular a similaridade entre dois embeddings.
+
+Agora que temos os documentos embedados no banco de dados, é hora de realizar a busca.
+Mas, antes disso, precisamos criar uma função para calcular a similaridade entre dois embedding.
 
 O que é similaridade?
-É uma medda que indica o quanto dois textos, frases ou palavras ouvetores são semelhantes. Ela não compara apenas letras ou palavras
-idênticas, mas sim o sentido e a estrutura do texto.
+
+É uma medida que indica o quanto dois textos, frases, palavras ou vetores são semelhantes.
+Ela não compara apenas letras ou palavras idênticas, mas sim o sentido e a estrutura do texto.
+
 Exemplo:
+
     Texto A:  "O gato está dormindo no sofá"
     Texto B: "Um felino descansa no sofá"
+
 Eles são diferentes em palavras, mas muito semelhantes em significado.
-Um modelo de embedding (como o usado em RAG) vai gerar vetores próximos no espaço vetorial, e a similaridade entre eles será alta (por exemplo, 0.92 em uma escala de 0 a 1).
+
+Um modelo de embedding (como os usados em RAG) gera vetores que ficam próximos uns dos outros no espaço vetorial quando os textos possuem significados semelhantes.
+Quando isso acontece, a similaridade entre esses vetores será alta — por exemplo, 0.92 em uma escala de 0 a 1.
 
 Nosso trecho de código da função similaridade:
+
 ````
   private function similaridade(array $a, array $b): float
     {
@@ -197,31 +219,43 @@ Nosso trecho de código da função similaridade:
         return $inter / max(count($a), count($b));
     }
 ````
-### Entendendo passoa a passo
-1. Pega a chaves:
-   Pegam só as chaves dos dois arrays.
+### Entendendo passo a passo
+
+1.  Pegamos apenas as chaves dos dois arrays.
+
 ````
 array_keys($a) e array_keys($b)
 ````
-2. Interesençao do array:
+2. Retorna a interesençao do array:
+
 ````
 array_intersect(array_keys($a), array_keys($b))
 ````
-3. Conta as palavras:
+
+3. Conta a quantidade de palavras.
+
 ````
 count(array_intersect(array_keys($a), array_keys($b)));
 ````
-4. Faz a proporção de chaves iguais:
+
+4. Calcula a proporção de chaves que são iguais entre os dois arrays:
+
 ````
 $inter / max(count($a), count($b));
+
 ````
-O resultado é um número entre 0 e 1:
+O resultado é um número entre 0 e 1, onde valores mais próximos de 1 indicam maior similaridade.
 
-1 = arrays totalmente parecidos (todas as chaves iguais)
+## Criando o chat
+Executamos o comando abaixo para criar o chat:
 
-0 = arrays completamente diferentes
+```
+php artisan make:command chat-test
 
-O código completo do nosso chat:
+```
+
+Copie e cole o código abaixo no arquivo criado:
+
 ````
 <?php
 
@@ -247,10 +281,10 @@ class chatCommand extends Command
 
 
         $pergunta = textarea('Escreva aqui');
-        $embeddingPergunta = $this->gerarEmbeddingSimples($pergunta);
+        $embeddingPergunta = $this->gerarembeddingimples($pergunta);
 
-        // Carrega embeddings do banco
-        $documentos = DB::table('documents_embeddings')->get();
+        // Carrega embedding do banco
+        $documentos = DB::table('documents_embedding')->get();
 
         $ranked = [];
         foreach ($documentos as $doc) {
@@ -291,7 +325,7 @@ class chatCommand extends Command
         return $inter / max(count($a), count($b));
     }
 
-    private function gerarEmbeddingSimples(string $texto): array
+    private function gerarembeddingimples(string $texto): array
     {
         // Quebra o texto em palavras únicas e ordenadas
         $palavras = array_unique(str_word_count(strtolower($texto), 1));
@@ -303,30 +337,39 @@ class chatCommand extends Command
 }
 
 ````
-Como o código acima pode ser um pouco complicado, vou explicar o passo a passo.:
+
+Como o código acima pode ser um pouco complicado, vou explicar o passo a passo:
 
 ## Entendendo passoa a passo
+
 1. Instanciamos o cliente que vamos usar para conectar ao Ollama:
+
 ````
 $client = \ArdaGnsrn\Ollama\Ollama::client();
 ````
 
 2. Criamos um textarea para que o usuário digite a pergunta:
+
 ````
 $pergunta = textarea('Escreva aqui');
+
 ````
 
-3. Criamos o embeddings da pergunta, para que possamos fazer o cálculo da similaridade
+3. Criamos o embedding da pergunta, para que possamos fazer o cálculo da similaridade
+
 ````
-$embeddingPergunta = $this->gerarEmbeddingSimples($pergunta);
+$embeddingPergunta = $this->gerarembeddingimples($pergunta);
 ````
-4. Trazemos os documentos embendados do banco de dados e armazenamos em uma variável:
+4. Trazemos os documentos embedados do banco de dados e armazenamos em uma variável:
+
 ````
-$documentos = DB::table('documents_embeddings')->get();
+$documentos = DB::table('documents_embedding')->get();
+
 ````
 
-5. Agora fazemos o calculo  de similaridade com o embedding da pergunta e dos arquivos do banco e 
-adicinamos no arry o id do documento no banco, e o resutlado da similaridade:
+5. Agora fazemos o cálculo de similaridade entre o embedding da pergunta e os embedding dos arquivos do banco.
+   Em seguida, adicionamos no array o id do documento e o resultado da similaridade.
+
 ````
    $ranked = [];
         foreach ($documentos as $doc) {
@@ -335,11 +378,14 @@ adicinamos no arry o id do documento no banco, e o resutlado da similaridade:
         }
 ````
 6. Ordenamos pela similaridade:
+
 ````
 arsort($ranked);
+
 ````
 
-7. Agora fazemos um iltro trazendo somente os 3 melhores
+7. Agora fazemos um filtro trazendo somente os 3 melhores.
+
 ````
     $topDocs = collect(array_keys($ranked))->take(3)
             ->map(fn($id) => $documentos->firstWhere('id', $id))
@@ -347,15 +393,16 @@ arsort($ranked);
             ->implode("\n\n");
 ````
 
-8. Montamos o prompt combinado com o prompt do sistema + o prompt escrito pelo usuário + o 
-context que nada mais é os arquivos que buscamos no pass 7:
+8. Montamos o prompt combinando o prompt do sistema + o prompt escrito pelo usuário + o contexto, que nada mais é do que os arquivos que buscamos no passo 7:
+
 ````
 $prompt = "Você é um assistente que responde apenas com base no conteúdo abaixo.
     Se a resposta não estiver presente no conteúdo, diga: 'Desculpe, a resposta para essa pergunta não está disponível neste documento.'.\n\n" .
             "---\n" . $topDocs . "---\n\n" .
             "Pergunta: $pergunta";
 ````
-9. Agora vamos criar o model e passar o prompt ao modelo para que ele possa gerar a resposta:
+9. Agora vamos criar o model e passar o prompt para o modelo, para que ele possa gerar a resposta:
+
 ````
  $response = $client->chat()->create([
             'model' => 'qwen2.5:3b',
@@ -367,39 +414,85 @@ $prompt = "Você é um assistente que responde apenas com base no conteúdo abai
         ]);
 ````
 
-10. Agora pegaremos a resposta e mostraremos no console:
+10. Agora pegamos a resposta e mostramos no console:
+
 ````
  $resultado = $response->message->content;
- dd($resultado);
+ $this->info($resultado);
 ````
 
 ## Rodando via comando o RAG
 
-Agora com o nosso código terminado, podemos rodar o comando para ver o resultado.
-Primeiro rodamos o comando para poder inserir os embeddings no banco de dados:
+Primeiramente, vamos criar uma tabela no banco de dados para armazenar os embedding:
+
+Arquivo do migrate para criar a tabela:
+
+```
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration {
+    public function up(): void
+    {
+        Schema::create('documents_embedding', function (Blueprint $table) {
+            $table->id();
+            $table->string('filename');
+            $table->text('content');
+            $table->json('embedding'); // array de floats
+            $table->timestamps();
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('documents_embedding');
+    }
+};
+
+```
+Rodamos o comando para criar a tabela:
+
+```
+
+php artisan migrate
+
+```
+
+Agora, com o nosso código finalizado, podemos rodar o comando para ver o resultado.
+Primeiro, executamos o comando responsável por inserir os embedding no banco de dados:
+
 ````
 php artisan embbeding
+
 ````
 
 Depois com os arquivos inseridos no banco de dados, podemos executar o comando do chat:
+
 ````
 php artisan chat
+
 ````
 Podemos digitar a pergunta e ver o resultado.
 
 ### Observações
-Nos meus testes eu fiz algumas perguntas na qual o modelo demorou bastante para responder,
-pois estamos usando um modelo bem simples,simplesmente para ilustrar o funcionamento do RAG.
 
-Algumas perguntas ele não conseguiu responder dentro do documento, mas isso já era esperado
-porque mesmo qeu criamos o embedding ainda o arquivo fica muito grande para o modelo entender e pode gerar
-inconsistência ou alucinações no modelo. 
+Nos meus testes, fiz algumas perguntas em que o modelo demorou bastante para responder, pois estamos usando um modelo bem simples, apenas para ilustrar o funcionamento do RAG.
 
-Para que possamos resolver isso temos alguns passos a seguir para tentar melhorar o modelo:
-1. Criar chunks de cada arquvivos, usar alguma estratégia e cada arquivo nós separarmos por chunks de 500 palavras ou 1000 
+Algumas perguntas ele não conseguiu responder com base no documento, mas isso já era esperado.
+Mesmo criando embedding, o arquivo ainda pode ser grande demais para o modelo interpretar, o que pode gerar inconsistências ou até alucinações na resposta.
+
+Para que possamos resolver isso, temos alguns passos que podemos seguir para tentar melhorar o modelo:
+
+1. Criar chunks de cada arquivos, usar alguma estratégia e cada arquivo nós separarmos por chunks de 500 palavras ou 1000 
 2. Melhorar nosso prompt do sistema que enviamos juntos com o contexto e a pergunta do usuário.
 3. Fazer Fine-tuning do modelo para melhorar o resultado.
 
-Enfim, temos muito ainda que evoluir e melhorar nosso modelo, mas com o passar do tempo vamos aprendendo e melhorando.
-E esses sao assuntos que vamos abordar nos posts futuros. Para que não pegar os próximos posts
-pode me seguir nas redes sociais.
+Enfim, ainda temos muito para evoluir e melhorar no nosso modelo, mas com o passar do tempo vamos aprendendo e ajustando.
+Esses são assuntos que vamos abordar nos próximos posts.
+
+Para não perder as próximas publicações, você pode me seguir nas redes sociais.
+
+Link do projeto: https://github.com/dtgfranca/simple-rag-with-laravel
