@@ -95,3 +95,5 @@ Caso queira colocar os servidores FPM para ser iniciado junto com o boot do sist
 `sudo systemctl enable httpd
 sudo systemctl enable php56-php-fpm
 sudo systemctl enable php72-php-fpm`
+
+{{< adsense >}}

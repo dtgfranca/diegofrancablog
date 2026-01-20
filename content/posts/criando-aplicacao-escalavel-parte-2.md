@@ -75,3 +75,5 @@ Já percebemos a diferença entre dois servidores, nessa segunda parte conseguim
 O próximo passo será estudar sobre a escalabilidade horizontal e vertical, nesse primeiro teste podemos perceber que o nosso servidor ainda é muito fraco talvez seja melhor aumentar a memória para isso terei que mudar o plano do Heroku, tentarei estudar um pouco mais sobre esse serviço, ainda não estou certo que fazer, mas vamos continuando e aprendendo juntos nessa longa jornada…
 
 Caso você ficou curioso em saber sobre as métricas do k6 mais profundamente, segue o link da documentação: https://k6.io/docs/using-k6/metrics/
+
+{{< adsense >}}

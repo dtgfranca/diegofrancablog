@@ -106,3 +106,5 @@ Qualquer convenção de nomenclatura DEVE ser usada e aplicada de forma consiste
 #### 4.3 - Metódos
 
 Nomes de métodos DEVEM ser declarados em camelCase().
+
+{{< adsense >}}

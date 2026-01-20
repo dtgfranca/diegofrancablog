@@ -60,3 +60,5 @@ Surpreendemente o fundador do projeto CentOS, Greg Kurtzer, não é a favor dess
 Como a notícia do site disse, Rock linux é um community-driven enterprise projetado para ser 100% bug-for bug e será compatível com a Red Hat Entrepise Linux.
 
 E você acha que a Red Hat tem razão em finalizar o projeto?
+
+{{< adsense >}}

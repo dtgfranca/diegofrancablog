@@ -171,3 +171,4 @@ a tarefa deve ser feita.
 
 
 Experimente hoje: escolha um desses modelos de prompt e teste na sua ferramenta favorita (ChatGPT, Claude, Gemini, etc). Veja qual deles melhora mais o seu resultado.
+

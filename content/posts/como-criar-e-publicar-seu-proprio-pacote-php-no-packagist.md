@@ -190,3 +190,5 @@ Clique em "Submit" e seu pacote já se encontra no packagist para instalação:
 Link do repositório:
 
 [https://github.com/dtgfranca/package-soma](https://github.com/dtgfranca/package-soma)
+
+{{< adsense >}}

@@ -135,3 +135,5 @@ Após executar os comandos acima, crie um link simbólico:
 `$ sudo ln -s /etc/php/7.0/mods-available/pdo_oci.ini /etc/php/7.0/apache2/conf.d/20-pdo_oci.ini`
 
 Reinicie o apache e o seu ambiente de desenvolvimento PHP já estará preparado para se conectar com o Oracle
+
+{{< adsense >}}

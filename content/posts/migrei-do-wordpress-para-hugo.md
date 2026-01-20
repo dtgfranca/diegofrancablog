@@ -128,3 +128,4 @@ Desktop
 
 Para mim, a migração foi libertadora: agora tenho um site mais leve, simples e rápido. Se você também sente que o WordPress está pesado, recomendo testar o Hugo.
 
+{{< adsense >}}

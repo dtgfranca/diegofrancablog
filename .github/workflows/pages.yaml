@@ -64,6 +64,7 @@ jobs:
         with:
           path: ./public
 
+
   # Deployment job
   deploy:
     environment:

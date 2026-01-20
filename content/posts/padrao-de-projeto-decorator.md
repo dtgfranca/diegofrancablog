@@ -248,3 +248,5 @@ Em projetos legados, onde mexer em código antigo pode gerar bugs inesperados, u
 O código completo está disponível no GitHub, caso queira testar e brincar com outras combinações:
 
 [https://github.dev/dtgfranca/design-pattern-decorator](https://github.dev/dtgfranca/design-pattern-decorator)
+
+{{< adsense >}}

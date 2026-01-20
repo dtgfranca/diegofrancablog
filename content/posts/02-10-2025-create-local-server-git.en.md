@@ -13,6 +13,7 @@ lang: en
 translationKey: "local-git-server"
 ---
 
+
 Hello everyone!
 
 Today I’d like to share a quick and useful tip: how to create a local Git server. Imagine this situation: you and your colleague are working on an important feature in the office and you need to deliver it in just a few days. Suddenly, the internet goes down — and your mobile data isn’t working either. You urgently need to send the part you just developed to your colleague. Feeling that cold panic already?
@@ -49,4 +50,4 @@ git clone /path-to-server/project.git
 ```
 
 And that’s it! You now have a **local Git server** ready to use, even without an internet connection.
-
+{{< adsense >}}

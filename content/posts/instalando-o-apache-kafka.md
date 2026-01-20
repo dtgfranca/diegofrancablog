@@ -125,3 +125,5 @@ advertised.listeners=PLAINTEXT://your.host.name:9092
 ```
 
 Após descomentar, adicione o endereço IP pelo qual você tem acesso externo. Depois de fazer isso, basta reiniciar o ZooKeeper e o broker para permitir a conexão remota com o Kafka.
+
+{{< adsense >}}

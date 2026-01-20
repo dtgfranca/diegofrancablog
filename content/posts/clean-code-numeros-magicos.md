@@ -54,3 +54,5 @@ Criei uma nova classe onde defini algumas constantes para representar os código
 Depois troquei os números pelas constantes e pode-se ver o quanto melhorou o entendimento do código:
 
 {{< figure src="/wp-content/uploads/2021/01/3-1.jpeg" alt="" caption="" >}}
+
+{{< adsense >}}

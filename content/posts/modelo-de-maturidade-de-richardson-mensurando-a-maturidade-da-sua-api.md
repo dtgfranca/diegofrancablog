@@ -158,3 +158,5 @@ Além de ter implementado os níveis acima, adicionamos o HATEOAS(hipermedias) n
 [Richardson's maturity model - Martin Fowler](https://martinfowler.com/articles/richardsonMaturityModel.html)
 
 [O que é uma api Restful na prática? Maturidade de Richardson](https://www.youtube.com/watch?v=P92SBaN42mQ)
+
+{{< adsense >}}

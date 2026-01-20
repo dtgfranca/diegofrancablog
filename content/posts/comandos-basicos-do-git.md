@@ -69,3 +69,5 @@ Local: `git clone /path/to/repository`
 [https://education.github.com/git-cheat-sheet-education.pdf](https://education.github.com/git-cheat-sheet-education.pdf)
 
 [htt](https://www.hostinger.com/tutorials/basic-git-commands) [ps://www.hostinger.com/tutorials/basic-git-commands](https://www.hostinger.com/tutorials/basic-git-commands)
+
+{{< adsense >}}

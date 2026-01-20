@@ -53,3 +53,5 @@ Sinta-se livre caso tiverem ideias, sugestões de ferramentas para que posso rea
 ## Repositório do código
 
 [https://github.com/dtgfranca/encurtador-link](https://github.com/dtgfranca/encurtador-link)
+
+{{< adsense >}}

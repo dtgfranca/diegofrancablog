@@ -143,3 +143,5 @@ Espero que tenha gostado dessa dica. Caso possui alguma dúvida ou sugestão ou 
 [https://www.conventionalcommits.org/en/v1.0.0/](https://www.conventionalcommits.org/en/v1.0.0/)
 
 [https://www.npmjs.com/package/git-commit-msg-linter](https://www.npmjs.com/package/git-commit-msg-linter)
+
+{{< adsense >}}

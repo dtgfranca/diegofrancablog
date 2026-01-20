@@ -164,3 +164,5 @@ sudo systemctl restart apache2
 ```
 
 Pronto, agora vemos a versão que desejamos. Caso tenha alguma dúvida deixe nos comentários.
+
+{{< adsense >}}

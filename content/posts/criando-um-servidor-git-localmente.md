@@ -80,3 +80,4 @@ Agora, para ver se de fato funcionou, basta executar o git clone:
 `git clone /caminho-projetoo/projeto.git`
 
 E é isso! Agora você tem um servidor Git local pronto para ser usado, mesmo sem conexão com a internet.
+{{< adsense >}}

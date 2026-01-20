@@ -117,3 +117,5 @@ Outra dica para quem está começando agora e quer escrever bons testes, é segu
 Todos esses conceitos que abordei estão disponíveis em todas as linguagens de programação.
 
 Espero que este artigo possa ajudá-lo de alguma forma. Caso tenha alguma duvida crítica (sempre são muito bem vindas), deixe nos comentários.
+
+{{< adsense >}}

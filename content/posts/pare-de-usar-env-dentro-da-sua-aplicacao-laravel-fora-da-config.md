@@ -65,3 +65,5 @@ config('configuracao.chave')
 ```
 
 Seguindo esse padrão, você evita problemas com `null` e garante que sua aplicação seja compatível com o cache de configuração.
+
+{{< adsense >}}
