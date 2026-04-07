@@ -1,5 +1,5 @@
 ---
-title: "Reflexoes Sobre Ia"
+title: "Reflexões Sobre Ia"
 date: 2026-04-07T13:48:57-03:00
 draft: false
 tags: ["ia", "privacidade", "consequências", "futuro"]
