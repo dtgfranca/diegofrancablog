@@ -95,15 +95,15 @@ Também existem opções para bloquear anúncios e rastreadores.
 
 Eu evitaria configurar um DNS externo sem uma razão específica. Quanto mais serviços diferentes você coloca no caminho, mais difícil fica entender exatamente por onde seu tráfego está passando.
 
-### Passo 4: Protocolo
+### Passo 4: Protocolo e anti-censura
 
-O WireGuard costuma ser a melhor escolha para uso normal.
+- **Protocolo:** WireGuard é a melhor opção para uso normal.
+- **Porta:** deixe em **Automático**. Só altere se você estiver enfrentando algum problema específico de conexão.
+- **Em redes que bloqueiam ou dificultam VPNs:** vá em **VPN settings → Anti-censorship** e experimente opções como **Shadowsocks**.
 
-Ele é rápido, moderno e é o protocolo utilizado pelo Mullvad como padrão atualmente.
+O **Shadowsocks** adiciona uma camada de ofuscação que pode dificultar a identificação e o bloqueio da conexão VPN.
 
-Em redes onde a conexão VPN é bloqueada ou sofre interferência, existem opções de obfuscação. Uma delas é o **Bridge Mode**.
-
-Se você estiver em uma rede que bloqueia VPNs, vale pesquisar especificamente qual modo de obfuscação funciona melhor para aquela situação.
+Se a VPN funciona normalmente na sua rede, não há motivo para ativar a anti-censura.
 
 ### Passo 5: Multihop
 
