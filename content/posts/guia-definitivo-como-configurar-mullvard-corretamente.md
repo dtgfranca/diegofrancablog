@@ -1,5 +1,6 @@
+```markdown
 ---
-title: "Guia Definitivo Como Configurar Mullvard Corretamente"
+title: "Guia Definitivo: Como Configurar o Mullvad Corretamente"
 date: 2026-08-21T08:11:37-03:00
 draft: false
 description: "Um guia honesto sobre privacidade sem ilusões"
@@ -7,180 +8,229 @@ tags: ["VPN", "Privacidade", "Mullvad", "Segurança"]
 categories: ["Segurança Digital"]
 ---
 
+## Introdução: VPN não é anonimato
 
-## Introdução: A VPN Não É Uma Bala de Prata
+É comum pensar que uma VPN resolve o problema de privacidade sozinha. Eu também tinha essa impressão: ligou a VPN, pronto, ninguém mais consegue ver nada.
 
-Muitas pessoas tratam a VPN como se fosse um botão mágico de anonimato. "Ativei, agora sou invisível." A realidade é mais complexa. Uma VPN **esconde seu tráfego do seu provedor de internet** e protege seus dados em redes públicas, mas **não te torna anônimo automaticamente**.
+Na prática, não é bem assim.
 
-Este guia vai te mostrar:
-1. **Quando** realmente vale a pena usar VPN
-2. **Como** configurar o Mullvad da forma correta
-3. **O que mais** você precisa fazer além da VPN
+Uma VPN esconde seu endereço IP e impede que seu provedor veja diretamente quais sites você acessa. Ela também é útil em redes Wi-Fi públicas. Mas isso não significa que você ficou anônimo.
 
-
-
-## Parte 1: Quando Usar VPN (e Quando Não Usar)
-
-### ✅ Use VPN Nestes Casos
-
-| Situação | Por quê |
-|---------|---------|
-| Redes Wi-Fi públicas (cafés, aeroportos, hotéis) | Protege contra sniffing na rede local |
-| Evitar throttling do ISP | Alguns provedores limitam banda por tipo de tráfego |
-| Acesso a serviços geobloqueados | Conteúdo disponível apenas em outros países |
-| Proteger metadados básicos | Oculta quais sites você acessa do seu ISP |
-| Comunicação sensível | Jornalismo, ativismo, pesquisa de temas delicados |
-
-### ⚠️ Use Com Cuidado Nesses Casos
-
-| Situação | Trade-off |
-|---------|-----------|
-| Serviços bancários online | Alguns bancos bloqueiam IPs de VPN por "fraude suspeita" |
-| Chamadas de vídeo frequentes | Pode aumentar latência e reduzir qualidade |
-| Jogos online competitivos | Ping maior = desvantagem competitiva |
-| Download de torrents (P2P) | Nem toda VPN permite P2P; verifique a política do serviço |
-
-### ❌ Não Use VPN (Ou Use Menos) Nestes Casos
-
-| Situação | Motivo |
-|---------|--------|
-| Contas pessoais fixas (Google, Facebook, Amazon) | O serviço já sabe quem você é pelo login |
-| Bancos e fintechs | Muitos bloqueiam ou exigem autenticação extra |
-| Streaming diário | Netflix/Disney+ detectam e bloqueiam IPs de VPN |
-| Baixo risco de vigilância | Se seu tráfego não interessa a ninguém, a VPN só adiciona atrito |
-
-### O Paradoxo da VPN 24/7
-
-Usar VPN o tempo todo cria seu próprio padrão comportamental. O problema não é **quem** vê — seu ISP vs. a VPN — mas sim a **consistência**. Um IP fixo de saída que faz as mesmas requisições na mesma ordem é tão identificável quanto seu IP real.
-
-> **Estratégia recomendada:**
-> - Ative a VPN **quando o risco for real** (rede pública, assunto sensível)
-> - Use recursos de rotação de IP quando possível
-> - Não dependa da VPN como única camada de proteção
+Este guia mostra o que eu considero uma configuração razoável para usar o Mullvad e quais cuidados fazem sentido além da VPN.
 
 ---
 
-## Parte 2: Configurando o Mullvad Passo a Passo
+## Parte 1: Quando usar VPN
 
-O Mullvad se destaca porque:
-- **Sem registro de dados** (auditado independentemente)
-- **Aceita dinheiro por correio e criptomoedas** (sem e-mail necessário para conta)
-- **Política transparente** e código aberto em partes do projeto
+### Onde faz sentido
 
-### Passo 1: Instalação Inicial
+| Situação | Por quê |
+|-----------|---------|
+| Wi-Fi público | Protege o tráfego contra pessoas na mesma rede |
+| Evitar throttling do ISP | Pode ajudar quando o provedor limita determinados tipos de tráfego |
+| Serviços geobloqueados | Permite usar um servidor em outro país |
+| Privacidade básica | Seu ISP deixa de ver diretamente os sites que você acessa |
+| Assuntos sensíveis | Adiciona uma camada de proteção |
 
-1. Baixe o app em [mullvad.net/download](https://mullvad.net/download)
-2. Ao abrir, o app gerará uma **conta aleatória** — guarde o número (começa com 5 dígitos). Isso é sua senha.
-3. Não é necessário e-mail, nome ou telefone.
+### Onde pode causar problemas
 
-### Passo 2: Kill Switch (CRÍTICO)
+| Situação | Problema |
+|-----------|----------|
+| Bancos | Alguns podem considerar o IP da VPN suspeito |
+| Chamadas de vídeo | Pode aumentar a latência |
+| Jogos online | Um servidor distante pode aumentar o ping |
+| Torrents | É preciso verificar se a VPN permite P2P |
 
-Neste menu, ative ambas as opções:
+### E usar VPN o tempo todo?
 
-- **Block traffic if not connected** — corta internet se o túnel cair
-- **Block local network traffic** — impede acesso à rede local enquanto desconectado (use se não confiar na LAN)
+Não existe uma regra dizendo que você precisa ficar conectado à VPN 24 horas por dia.
 
-> ⚠️ **Teste:** desconecte manualmente da VPN e tente acessar qualquer site. Se a internet continuar funcionando, o kill switch falhou.
+Se você está usando uma conta Google, Facebook ou Amazon, por exemplo, a VPN não impede que o serviço saiba quem você é. O login continua sendo um identificador.
 
-### Passo 3: DNS Seguro
+Também não faz muito sentido usar VPN só porque "VPN é mais segura", sem considerar o que você está tentando proteger.
 
-- Vá em **Settings → DNS**
-- Escolha **Mullvad DNS** (padrão, já roteado pelo túnel)
-- Se quiser bloquear rastreadores: **Mullvad Adblock DNS**
-- Evite DNS personalizado (Cloudflare, Google) a menos que tenha motivo específico — pode vazar para fora do túnel
+Para mim, o mais importante é entender **qual problema a VPN está resolvendo naquele momento**.
 
-### Passo 4: Protocolo e Porta
+---
 
-- **Protocolo preferencial:** WireGuard (mais rápido)
-- **Porta:** UDP 53 (DNS) ou 51820 (WireGuard padrão)
-- **Em redes censuradas:** use Bridge Mode (Shadowsocks) para ofuscar o tráfego
+## Parte 2: Configurando o Mullvad
 
-### Passo 5: Multihop (Para Usuários Avançados)
+O Mullvad é interessante principalmente pela forma como trata as contas.
 
-O multihop salta sua conexão por dois servidores em países diferentes:
+Não é necessário informar nome, telefone ou e-mail para criar uma conta. A conta é identificada por um número.
 
-- **Ative:** Settings → Advanced → Multihop
-- **Prós:** Dificulta correlação entre entrada e saída
-- **Contras:** Latência maior, velocidade menor
+Também existe bastante documentação pública sobre o serviço, além de auditorias independentes.
 
-> **Use multihop quando:**
-> - Lidando com informação muito sensível
-> - Seu adversário tem capacidade técnica avançada (estados, corporações grandes)
->
-> **Não precisa para:**
-> - Proteção básica em redes públicas
-> - Evitar throttling do ISP
+### Passo 1: Instalação
+
+Baixe o aplicativo diretamente pelo site oficial:
+
+[mullvad.net/download](https://mullvad.net/download)
+
+Ao abrir o aplicativo, crie uma conta. Ele vai gerar um número que você precisa guardar.
+
+Esse número é importante. Não perca.
+
+### Passo 2: Kill Switch
+
+O kill switch é uma das configurações que eu considero mais importantes.
+
+A ideia é simples: se a VPN cair, o aplicativo bloqueia o tráfego em vez de deixar sua conexão voltar automaticamente para o IP normal.
+
+Procure pelas opções relacionadas a:
+
+- **Block traffic if not connected**
+- **Block local network traffic**
+
+A segunda opção é útil se você também quiser impedir o acesso à rede local enquanto estiver desconectado da VPN.
+
+Depois de configurar, faça um teste: conecte à VPN, derrube a conexão e tente abrir um site.
+
+Se a internet continuar funcionando normalmente, vale investigar a configuração.
+
+### Passo 3: DNS
+
+Em **Settings → DNS**, você pode usar o DNS do próprio Mullvad.
+
+Também existem opções para bloquear anúncios e rastreadores.
+
+Eu evitaria configurar um DNS externo sem uma razão específica. Quanto mais serviços diferentes você coloca no caminho, mais difícil fica entender exatamente por onde seu tráfego está passando.
+
+### Passo 4: Protocolo
+
+O WireGuard costuma ser a melhor escolha para uso normal.
+
+Ele é rápido, moderno e é o protocolo utilizado pelo Mullvad como padrão atualmente.
+
+Em redes onde a conexão VPN é bloqueada ou sofre interferência, existem opções de obfuscação. Uma delas é o **Bridge Mode**.
+
+Se você estiver em uma rede que bloqueia VPNs, vale pesquisar especificamente qual modo de obfuscação funciona melhor para aquela situação.
+
+### Passo 5: Multihop
+
+O Multihop envia a conexão por mais de um servidor antes de chegar ao destino.
+
+Isso pode ser interessante em situações onde você quer dificultar a correlação entre o servidor de entrada e o de saída.
+
+O problema é simples: mais servidores também significam mais latência.
+
+Para navegar normalmente ou usar Wi-Fi público, eu não vejo necessidade de ativar isso.
+
+Faz mais sentido para situações específicas em que você realmente precisa dessa camada adicional.
 
 ### Passo 6: IPv6
 
-- Se sua rede doméstica não usa IPv6, **desative no app** (Settings → Network → IPv6)
-- Previne vazamentos onde endereços locais escapam do túnel
+Se você não utiliza IPv6 na sua rede, pode considerar desativá-lo no aplicativo.
+
+O importante aqui é evitar uma configuração em que o IPv6 acabe seguindo um caminho diferente do restante do tráfego.
+
+Depois de configurar, teste. Não confie apenas no que aparece no aplicativo.
 
 ---
 
-## Parte 3: Higiene Complementar (A VPN Sozinha Não Basta)
+## Parte 3: A VPN não é suficiente
 
 ### 1. Vazamento de WebRTC
 
-O WebRTC no navegador pode revelar seu IP real mesmo com VPN ativa:
+O WebRTC pode expor informações de rede que você talvez não queira compartilhar.
 
-| Navegador | Solução |
-|-----------|---------|
+No desktop, as possibilidades dependem do navegador:
+
+| Navegador | Opção |
+|-----------|-------|
 | Firefox | `about:config` → `media.peerconnection.enabled = false` |
-| Chrome/Edge | Instale uBlock Origin → ative "Prevent WebRTC from leaking local IP addresses" |
-| Mullvad Browser | Já vem com WebRTC desativado — recomendação máxima para atividades sensíveis |
+| Chrome/Edge | Usar uma extensão que ofereça proteção contra vazamentos de WebRTC |
+| Mullvad Browser | Possui configurações de privacidade mais restritivas por padrão |
 
-### 2. Cookies e Rastreamento
+No celular, a situação é diferente.
 
-- Use extensões como **uBlock Origin** ou **Privacy Badger**
-- Considere **ClearURLs** para remover parâmetros de rastreamento
-- Limpe cookies regularmente ou use containers (Firefox Multi-Account Containers)
+Se você estiver usando o Chrome no Android, por exemplo, não existe o mesmo controle sobre WebRTC disponível no Firefox ou em algumas versões de navegadores desktop.
 
-### 3. Testes de Vazamento
+Mesmo quando um navegador móvel permite instalar extensões, isso não significa necessariamente que o WebRTC esteja completamente desativado.
 
-Antes de confiar na configuração, teste:
+Se a atividade for mais sensível, eu prefiro usar um navegador pensado para privacidade em vez de tentar transformar um navegador comum em um navegador privado usando várias extensões.
 
-| Site | O que verifica |
-|------|---------------|
-| [dnsleaktest.com](https://dnsleaktest.com) | Se seu DNS está vazando |
-| [browserleaks.com](https://browserleaks.com) | Vazamentos de WebRTC, DNS, IP |
-| [ipleak.net](https://ipleak.net) | Endereço IP real exposto? |
+### 2. Cookies e rastreamento
 
-Teste **com** e **sem** VPN. Os resultados devem ser consistentes quando conectado.
+A VPN não impede que um site reconheça você por cookies ou pelo login.
 
----
+Algumas ferramentas que podem ajudar:
 
-## Parte 4: Perguntas Frequentes
+- **uBlock Origin**
+- **Privacy Badger**
+- **ClearURLs**
+- Firefox Multi-Account Containers
 
-### "A VPN deixa meu tráfego mais lento?"
-Sim. Você adiciona um salto intermediário. Espera-se perda de 10-30% de velocidade, dependendo da distância do servidor. O Mullvad otimiza com WireGuard, que é mais leve que OpenVPN.
+Também vale separar atividades quando isso fizer sentido. Usar a mesma conta em todos os lugares facilita bastante a criação de um perfil sobre você.
 
-### "Posso confiar no Mullvad?"
-Eles têm auditorias independentes, políticas de **no-logs** verificadas e aceitam pagamento anônimo. Nenhum provedor é perfeito, mas o Mullvad está entre os mais transparentes do mercado.
+### 3. Teste de vazamentos
 
-### "Por que não usar VPN grátis?"
-VPNs gratuitas frequentemente monetizam vendendo seus dados. "Se o produto é grátis, você é o produto." Para privacidade real, investir é necessário.
+Depois de configurar a VPN, faça alguns testes.
 
-### "O Mullvad grava meus logs?"
-Segundo suas políticas e auditorias, não. Eles não armazenam:
-- Histórico de navegação
-- Timestamps de conexão
-- Dados de origem ou destino
-- Endereços IP originais
+| Site | O que verificar |
+|------|-----------------|
+| [dnsleaktest.com](https://dnsleaktest.com) | Vazamento de DNS |
+| [browserleaks.com](https://browserleaks.com) | IP, DNS e WebRTC |
+| [ipleak.net](https://ipleak.net) | Endereço IP e outras informações de rede |
+
+Faça os testes primeiro **sem VPN** e depois **com VPN**.
+
+O resultado esperado é que, conectado à VPN, os sites vejam o IP do servidor da VPN e não o seu IP público normal.
 
 ---
 
-## Conclusão: Privacidade É Camadas, Não Botões
+## Parte 4: Perguntas frequentes
 
-Uma VPN bem configurada é uma camada importante de proteção, mas não resolve tudo. Combine com:
+### A VPN deixa a internet mais lenta?
 
-1. **Higiene de navegador** (WebRTC desligado, extensões de privacidade)
-2. **Senhas únicas** para cada serviço (use um gerenciador como Bitwarden ou KeePassXC)
-3. **Autenticação de dois fatores** (TOTP, não SMS)
-4. **Ceticismo com links e downloads**, mesmo com VPN ativa
+Pode deixar.
 
-A melhor configuração é aquela que equilibra **privacidade, conveniência e segurança realista**. Não procure perfeição — procure melhoria incremental.
+Você está adicionando um servidor entre seu dispositivo e a internet, então existe um custo de latência e processamento.
+
+A diferença depende principalmente da distância até o servidor, da qualidade da sua conexão e da carga da rede.
+
+O WireGuard costuma ter um desempenho muito bom e é uma das razões para eu preferi-lo.
+
+### Posso confiar no Mullvad?
+
+Nenhum provedor de VPN deveria ser tratado como alguém em quem você precisa confiar cegamente.
+
+O que eu considero positivo no Mullvad é a transparência, a política de não registro de determinados dados e as auditorias independentes.
+
+Ainda assim, uma VPN não substitui outras medidas de segurança.
+
+### Por que não usar uma VPN grátis?
+
+Porque manter uma infraestrutura de VPN custa dinheiro.
+
+Algumas VPNs gratuitas utilizam publicidade ou outras formas de monetização. Isso não significa que toda VPN grátis seja ruim, mas eu teria bastante cuidado antes de entregar todo o meu tráfego para um serviço desconhecido só porque ele não cobra nada.
+
+### O Mullvad grava meus logs?
+
+Segundo a política do próprio serviço, ele não registra atividades como histórico de navegação e os endereços IP de origem para identificar o que você está fazendo.
+
+Isso não significa que uma VPN seja capaz de tornar alguém invisível.
+
+A VPN é apenas uma parte da cadeia.
 
 ---
 
-> Tem dúvidas sobre alguma etapa específica? Deixe nos comentários ou compartilhe suas próprias configurações de segurança.
+## Conclusão
+
+Depois de configurar uma VPN, ainda existem várias maneiras de uma pessoa ser identificada.
+
+O navegador pode entregar informações. Cookies podem identificar você. Uma conta pode associar toda a atividade ao seu nome. E, obviamente, uma VPN não protege contra phishing, malware ou uma senha fraca.
+
+Por isso, eu vejo a privacidade como uma combinação de várias coisas:
+
+1. Uma VPN confiável quando ela fizer sentido.
+2. Um navegador com boas proteções de privacidade.
+3. Senhas únicas para cada serviço.
+4. Autenticação de dois fatores.
+5. Cuidado com links e arquivos.
+6. Testes para verificar se a configuração realmente está funcionando.
+
+Não existe uma configuração perfeita.
+
+A ideia é simplesmente deixar mais difícil coletar informações sobre você do que seria usando tudo no padrão.
+```
