@@ -1,4 +1,3 @@
-```markdown
 ---
 title: "Guia Definitivo: Como Configurar o Mullvad Corretamente"
 date: 2026-08-21T08:11:37-03:00
