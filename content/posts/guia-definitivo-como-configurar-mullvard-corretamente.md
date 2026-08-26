@@ -76,14 +76,7 @@ O kill switch é uma das configurações que eu considero mais importantes.
 
 A ideia é simples: se a VPN cair, o aplicativo bloqueia o tráfego em vez de deixar sua conexão voltar automaticamente para o IP normal.
 
-Procure pelas opções relacionadas a:
-
-- **Block traffic if not connected**
-- **Block local network traffic**
-
-A segunda opção é útil se você também quiser impedir o acesso à rede local enquanto estiver desconectado da VPN.
-
-Depois de configurar, faça um teste: conecte à VPN, derrube a conexão e tente abrir um site.
+Depois de ativar, caso já não esteja ativado, faça um teste: conecte à VPN, derrube a conexão e tente abrir um site.
 
 Se a internet continuar funcionando normalmente, vale investigar a configuração.
 
