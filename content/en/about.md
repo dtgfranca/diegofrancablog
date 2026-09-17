@@ -1,7 +1,7 @@
 ---
 title: "About"
 date: 2025-09-24T16:17:51-03:00
-draft: true
+draft: false
 ---
 I'm Diego França, a Software Architect and writer behind the blog diegofranca.dev.
 

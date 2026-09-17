@@ -21,6 +21,8 @@ markup:
 services:
   disqus:
     shortname: 'blog-diegofranca-dev'
+  googleAnalytics:
+    id: G-TE926Z2M83
 
 # Multilingual
 defaultContentLanguage: en

@@ -1,7 +1,7 @@
 ---
 title: "About"
 date: 2025-09-24T16:17:51-03:00
-draft: true
+draft: false
 ---
 Eu sou Diego frança, Arquiteto de software e escritor do blog diegofranca.dev.
 Meu foco é escrever sobre PHP, diversos tipos de testes, criação de pipelines e as vezes faço
