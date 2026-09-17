@@ -1,41 +1,14 @@
 ---
-  card_desc: |-
-    Ultimamente venho estudando a fundo sobre o TDD e como ele pode nos auxiliar a escrever um bom código.
-
-
-
-    Muitos desenvolvedores ainda não aderiram  a essa pr
-  card_image: http://diegofranca.dev/wp-content/uploads/2021/03/TDD.jpg
-  card_title: TDD - Analisando FeedBacks
-  og_desc: |-
-    Ultimamente venho estudando a fundo sobre o TDD e como ele pode nos auxiliar a escrever um bom código.
-
-
-
-    Muitos desenvolvedores ainda não aderiram  a essa pr
-  og_image: http://diegofranca.dev/wp-content/uploads/2021/03/TDD.jpg
-  og_image_alt:
-  og_title: TDD - Analisando FeedBacks
-_edit_last: "1"
-_thumbnail_id: "354"
-author: diego.tg.franca@gmail.com
+categories:
   - uncategorized
+cover:
   alt: TDD
   image: /wp-content/uploads/2021/03/TDD.jpg
 date: "2021-03-25T21:13:14+00:00"
-fw:opt:ext:pb:page-builder:json: '[]'
-  page-builder: {}
-    builder_active: false
-    json: '[]'
-guid: http://diegofranca.dev/?p=348
-parent_post_id: null
-post_id: "348"
-summary: |-
-  Ultimamente venho estudando a fundo sobre o TDD e como ele pode nos auxiliar a escrever um bom código.
-
-  Muitos desenvolvedores ainda não aderiram a essa prática alguns por falta de conhecimento e outros por acharem que perdem a produtividade ao criar os testes antes do desenvolvimento
 title: TDD - Analisando FeedBacks
+aliases:
   - /2021/03/05/tdd-analizando-feedbacks/
+
 ---
 Ultimamente venho estudando a fundo sobre o TDD e como ele pode nos auxiliar a escrever um bom código.
 

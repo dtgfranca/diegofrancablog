@@ -1,33 +1,20 @@
 ---
-  card_desc: "The idea for this post came up after I gave a presentation on unit tests at the company I work for. During the presentation, I did a live"
-  card_image: http://diegofranca.dev/wp-content/uploads/2023/02/system-bug.jpg
-  card_title: Demystifying Unit Tests
-  og_desc: "The idea for this post came up after I gave a presentation on unit tests at the company I work for. During the presentation, I did a live"
-  og_image: http://diegofranca.dev/wp-content/uploads/2023/02/system-bug.jpg
-  og_image_alt:
-  og_title: Demystifying Unit Tests
-_edit_last: "1"
-_thumbnail_id: "479"
-author: diego.tg.franca@gmail.com
+categories:
   - php
   - testing
+cover:
   alt: system-bug
   image: /wp-content/uploads/2023/02/system-bug.jpg
 date: "2023-02-17T20:23:38+00:00"
-fw:opt:ext:pb:page-builder:json: '[]'
-  page-builder: {}
-    builder_active: false
-    json: '[]'
-guid: https://diegofranca.dev/?p=469
-parent_post_id: null
-post_id: "469"
-summary: "The idea for this post came up after I gave a presentation on unit tests at the company I work for. During the presentation, I did a live code in which I created an endpoint using the concepts I'll cover here, in order to isolate the component. I would love to build an application right here on the blog, but doing a step-by-step might get a bit tedious. So I decided to summarize what was presented, with code examples for better understanding."
+tags:
   - software-engineering
   - php
   - testing
   - unit-tests
-title: Demystifying Unit Tests
+title: "Demystifying Unit Tests"
+aliases:
   - /2023/02/17/desbravando-testes-unitarios/
+
 ---
 The idea for this post came up after I gave a presentation on unit tests at the company I work for. During the presentation, I did a live code in which I created an endpoint using the concepts I'll cover here, in order to isolate the component. I would love to build an application right here on the blog, but doing a step-by-step might get a bit tedious. So I decided to summarize what was presented, with code examples for better understanding.
 

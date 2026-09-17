@@ -1,19 +1,12 @@
 ---
-_edit_last: "1"
-author: diego.tg.franca@gmail.com
 categories:
   - uncategorized
 date: "2020-12-26T19:50:40+00:00"
 draft: "true"
-fw:opt:ext:pb:page-builder:json: '[]'
-fw_options:
-  page-builder:
-    builder_active: false
-    json: '[]'
-guid: http://diegofranca.dev/?p=332
-parent_post_id: null
-post_id: "332"
-title: CI/CD with GitLab and Laravel
+title: "CI/CD with GitLab and Laravel"
+aliases:
+  - /
+
 ---
 1 - First step: create the Laravel project
 

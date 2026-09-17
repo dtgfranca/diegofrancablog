@@ -1,35 +1,21 @@
 ---
-  disable_ads: 0
-  card_desc: "Hey folks! How's it going? Continuing our journey of building a scalable application, in this second part I'll tell you how the beginning of"
-  card_image: http://diegofranca.dev/wp-content/uploads/2021/07/21184018666362.jpg
-  card_title: Building a scalable application — Part 2
-  og_desc: "Hey folks! How's it going? Continuing our journey of building a scalable application, in this second part I'll tell you how the beginning of"
-  og_image: http://diegofranca.dev/wp-content/uploads/2021/07/21184018666362.jpg
-  og_image_alt:
-  og_title: Building a scalable application — Part 2
-_edit_last: "1"
-_thumbnail_id: "391"
-author: diego.tg.franca@gmail.com
+categories:
   - uncategorized
+cover:
   alt: "21184018666362"
   image: /wp-content/uploads/2021/07/21184018666362.jpg
 date: "2021-07-18T13:37:58+00:00"
-fw:opt:ext:pb:page-builder:json: '[]'
-  page-builder: {}
-    builder_active: false
-    json: '[]'
-guid: http://diegofranca.dev/?p=393
-parent_post_id: null
-post_id: "393"
-summary: "Hey folks! How's it going? Continuing our journey of building a scalable application, in this second part I'll tell you how the beginning of the tests went, [if you haven't read the first part, click here](https://diegofranca.dev/2021/07/04/criando-aplicacao-escalavel-parte-1/)."
+tags:
   - scalability
   - heroku
   - k6
   - php
   - load-testing
   - testing
-title: Building a scalable application — Part 2
+title: "Building a scalable application — Part 2"
+aliases:
   - /2021/07/18/criando-aplicacao-escalavel-parte-2/
+
 ---
 Hey folks! How's it going? Continuing our journey of building a scalable application, in this second part I'll tell you how the beginning of the tests went, [if you haven't read the first part, click here](/2021/07/04/criando-aplicacao-escalavel-parte-1/).
 

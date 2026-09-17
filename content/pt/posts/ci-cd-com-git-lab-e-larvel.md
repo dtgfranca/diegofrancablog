@@ -1,19 +1,12 @@
 ---
-_edit_last: "1"
-author: diego.tg.franca@gmail.com
 categories:
   - uncategorized
 date: "2020-12-26T19:50:40+00:00"
 draft: "true"
-fw:opt:ext:pb:page-builder:json: '[]'
-fw_options:
-  page-builder:
-    builder_active: false
-    json: '[]'
-guid: http://diegofranca.dev/?p=332
-parent_post_id: null
-post_id: "332"
 title: CI/CD com git lab e larvel
+aliases:
+  - /
+
 ---
 1 - passo criar o projeto laravle
 
@@ -31,7 +24,7 @@ title: CI/CD com git lab e larvel
 
 8 - criar chaves publica e privada no computador de dev
 
-9 - adicionar a chave pivada criada anterior em settings/cidcd/variables com o nome de SSH_PRIVATE_KEY o arqivo gitlab.yaml irá ler
+9 - adicionar a chave pivada criada anterior em settings/cidcd/variables com o nome de SSH\_PRIVATE\_KEY o arqivo gitlab.yaml irá ler
 
 10 - Adicionar a chave publica do pc de desenvolvimento no servidor onde será feito o deploy
 

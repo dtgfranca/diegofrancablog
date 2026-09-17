@@ -1,29 +1,12 @@
 ---
-  card_desc: Hoje vou apresentar para vocês algo bem interessante, a implementaçao do rag no php. Com o advento da IA nos dias de hoje eu vejo que a IA pode nos ajudar . H
-  card_image:
-  card_title: RGA com php
-  og_desc: Hoje vou apresentar para vocês algo bem interessante, a implementaçao do rag no php. Com o advento da IA nos dias de hoje eu vejo que a IA pode nos ajudar . H
-  og_image:
-  og_image_alt:
-  og_title: RGA com php
-_edit_last: "1"
-author: diego.tg.franca@gmail.com
+categories:
   - uncategorized
 date: "2025-07-08T19:56:31+00:00"
 draft: "true"
-fw:opt:ext:pb:page-builder:json: '[]'
-  page-builder: {}
-    builder_active: false
-    json: '[]'
-guid: https://diegofranca.dev/?p=648
-parent_post_id: null
-pms-content-restrict-custom-non-member-redirect-url:
-pms-content-restrict-custom-redirect-url:
-pms-content-restrict-message-logged_out:
-pms-content-restrict-message-non_members:
-pms-content-restrict-type: default
-post_id: "648"
 title: RGA com php
+aliases:
+  - /
+
 ---
 Hoje vou apresentar para vocês algo bem interessante, a implementaçao do rag no php. Com o advento da IA nos dias de hoje eu vejo que a IA pode nos ajudar . Hoje , eu trabalho com arquiteto de software e crio documentações de processo de desenvolvimento de sotware. As vezes isso fica muito grande e com um linguajar as vezes muito técnica. As veze fica muito cansativo de vc buscar alguma informação nesse documento . Então o que eu fiz? Criei um agente para que possa me auxiliar com os padrões e processos que desenvolvi.
 

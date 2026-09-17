@@ -1,31 +1,18 @@
 ---
-  card_desc: Há algumas semanas tive a necessidade de configurar várias versões do php no servidor da empresa. Depois de muitas pesquisas eis que achei uma solução e ag
-  card_image: http://diegofranca.dev/wp-content/uploads/2020/04/0_WnHaHjdJCtEGGTAV.jpg
-  card_title: Configurando várias versões do PHP no Centos 7
-  og_desc: Há algumas semanas tive a necessidade de configurar várias versões do php no servidor da empresa. Depois de muitas pesquisas eis que achei uma solução e ag
-  og_image: http://diegofranca.dev/wp-content/uploads/2020/04/0_WnHaHjdJCtEGGTAV.jpg
-  og_image_alt:
-  og_title: Configurando várias versões do PHP no Centos 7
-_edit_last: "1"
-_thumbnail_id: "177"
-author: diego.tg.franca@gmail.com
+categories:
   - servidores
+cover:
   alt: 0_WnHaHjdJCtEGGTAV
   image: /wp-content/uploads/2020/04/0_WnHaHjdJCtEGGTAV.jpg
 date: "2020-04-21T17:39:30+00:00"
-fw:opt:ext:pb:page-builder:json: '[]'
-  page-builder: {}
-    builder_active: false
-    json: '[]'
-guid: http://diegofranca.dev/?p=176
-parent_post_id: null
-post_id: "176"
-summary: Há algumas semanas tive a necessidade de configurar várias versões do php no servidor da empresa. Depois de muitas pesquisas eis que achei uma solução e agora vou compartilhar com vocês caso algum dia venham ter necessidade.
+tags:
   - centos
   - linux
   - php
 title: Configurando várias versões do PHP no Centos 7
+aliases:
   - /2020/04/21/configurando-varias-versoes-do-php-no-centos-7/
+
 ---
 Há algumas semanas tive a necessidade de configurar várias versões do php no servidor da empresa. Depois de muitas pesquisas eis que achei uma solução e agora vou compartilhar com vocês caso algum dia venham ter necessidade.
 
@@ -89,5 +76,3 @@ Caso queira colocar os servidores FPM para ser iniciado junto com o boot do sist
 `sudo systemctl enable httpd
 sudo systemctl enable php56-php-fpm
 sudo systemctl enable php72-php-fpm`
-
-{{< adsense >}}

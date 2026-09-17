@@ -1,48 +1,17 @@
 ---
-  card_desc: |-
-    Falaaa Galera! Novamente com mais um tutorial super rápido e prático de como configurar  várias versões do PHP no Ubuntu. Esperem que gostem.
-
-
-
-
-
-
-
-    Às vez
-  card_image: http://diegofranca.dev/wp-content/uploads/2023/05/1_quEn9EdbO3C4IK4n4-bjxg.jpg
-  card_title: Como instalar várias versões do PHP no ubuntu
-  og_desc: |-
-    Falaaa Galera! Novamente com mais um tutorial super rápido e prático de como configurar  várias versões do PHP no Ubuntu. Esperem que gostem.
-
-
-
-
-
-
-
-    Às vez
-  og_image: http://diegofranca.dev/wp-content/uploads/2023/05/1_quEn9EdbO3C4IK4n4-bjxg.jpg
-  og_image_alt:
-  og_title: Como instalar várias versões do PHP no ubuntu
-_edit_last: "1"
-_thumbnail_id: "515"
-author: diego.tg.franca@gmail.com
+categories:
   - uncategorized
+cover:
   alt: 1_quEn9EdbO3C4IK4n4-bjxg
   image: /wp-content/uploads/2023/05/1_quEn9EdbO3C4IK4n4-bjxg.jpg
 date: "2023-05-05T16:40:00+00:00"
-fw:opt:ext:pb:page-builder:json: '[]'
-  page-builder: {}
-    builder_active: false
-    json: '[]'
-guid: http://diegofranca.dev/?p=310
-parent_post_id: null
-post_id: "310"
-summary: Falaaa Galera! Novamente com mais um tutorial super rápido e prático de como configurar várias versões do PHP no Ubuntu. Esperem que gostem.
+tags:
   - apache
   - php
 title: Como instalar várias versões do PHP no ubuntu
+aliases:
   - /2023/05/05/como-instalar-varias-versoes-do-php-no-ubuntu/
+
 ---
 Falaaa Galera! Novamente com mais um tutorial super rápido e prático de como configurar várias versões do PHP no Ubuntu. Esperem que gostem.
 
@@ -158,5 +127,3 @@ sudo systemctl restart apache2
 ```
 
 Pronto, agora vemos a versão que desejamos. Caso tenha alguma dúvida deixe nos comentários.
-
-{{< adsense >}}

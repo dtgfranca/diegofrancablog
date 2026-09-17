@@ -1,34 +1,19 @@
 ---
-  disable_ads: 0
-  card_desc: "Hey folks!!! I've been working with PHP and MySQL for some years now, and in the last few months I needed to connect to Oracle. I spent a lot of"
-  card_image: http://diegofranca.dev/wp-content/uploads/2020/05/Php_Oracle_ImagePost.png
-  card_title: Configuring OCI8 and PDO_OCI on PHP 7
-  og_desc: "Hey folks!!! I've been working with PHP and MySQL for some years now, and in the last few months I needed to connect to Oracle. I spent a lot of"
-  og_image: http://diegofranca.dev/wp-content/uploads/2020/05/Php_Oracle_ImagePost.png
-  og_image_alt:
-  og_title: Configuring OCI8 and PDO_OCI on PHP 7
-_edit_last: "1"
-_thumbnail_id: "220"
-_yoast_wpseo_content_score: "60"
-author: diego.tg.franca@gmail.com
+categories:
   - uncategorized
+cover:
   alt: Php_Oracle_ImagePost
   image: /wp-content/uploads/2020/05/Php_Oracle_ImagePost.png
 date: "2020-05-07T11:44:48+00:00"
-fw:opt:ext:pb:page-builder:json: '[]'
-  page-builder: {}
-    builder_active: false
-    json: '[]'
-guid: http://diegofranca.dev/?p=219
-parent_post_id: null
-post_id: "219"
-summary: "Hey folks!!! I've been working with PHP and MySQL for some years now, and in the last few months I needed to connect to Oracle. I spent a lot of time researching, and today I'd like to put together a simple tutorial so you can have a reliable source on how to do this installation. I used Ubuntu 16.04 and PHP 7.0."
+tags:
   - oci8
   - oracle
   - pdo_oci
   - php7
-title: Configuring OCI8 and PDO_OCI on PHP 7
+title: "Configuring OCI8 and PDO_OCI on PHP 7"
+aliases:
   - /2020/05/05/configurando-o-oci8-e-pdo_oci-no-php7/
+
 ---
 Hey folks!!! I've been working with PHP and MySQL for some years now, and in the last few months I needed to connect to Oracle. I spent a lot of time researching, and today I'd like to put together a simple tutorial so you can have a reliable source on how to do this installation. I used Ubuntu 16.04 and PHP 7.0.
 

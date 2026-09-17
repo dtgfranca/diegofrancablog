@@ -1,39 +1,20 @@
 ---
-  card_desc: 'Olá pessoal! Hoje quero compartilhar com vocês como criar e publicar pacotes PHP no Packagist. Você já criou um código PHP reutilizável e queria instalar '
-  card_image: http://diegofranca.dev/wp-content/uploads/2025/06/private-packagist-for-vendors.png
-  card_title: Como criar e publicar seu próprio pacote PHP no Packagist
-  og_desc: 'Olá pessoal! Hoje quero compartilhar com vocês como criar e publicar pacotes PHP no Packagist. Você já criou um código PHP reutilizável e queria instalar '
-  og_image: http://diegofranca.dev/wp-content/uploads/2025/06/private-packagist-for-vendors.png
-  og_image_alt:
-  og_title: Como criar e publicar seu próprio pacote PHP no Packagist
-_edit_last: "1"
-_thumbnail_id: "631"
-_wp_old_date: "2025-06-25"
-author: diego.tg.franca@gmail.com
+categories:
   - dicas
   - php
+cover:
   alt: private-packagist-for-vendors
   image: /wp-content/uploads/2025/06/private-packagist-for-vendors.png
 date: "2025-06-26T00:41:10+00:00"
-fw:opt:ext:pb:page-builder:json: '[]'
-  page-builder: {}
-    builder_active: false
-    json: '[]'
-guid: https://diegofranca.dev/?p=593
-parent_post_id: null
-pms-content-restrict-custom-non-member-redirect-url:
-pms-content-restrict-custom-redirect-url:
-pms-content-restrict-message-logged_out:
-pms-content-restrict-message-non_members:
-pms-content-restrict-type: default
-post_id: "593"
-summary: Olá pessoal! Hoje quero compartilhar com vocês como criar e publicar pacotes PHP no Packagist. Você já criou um código PHP reutilizável e queria instalar em outro projeto sem a necessidade de ficar duplicando código e até compartilhar com a comunidade PHP?
+tags:
   - composer
   - engenharia-e-software
   - packagist
   - php
 title: Como criar e publicar seu próprio pacote PHP no Packagist
+aliases:
   - /2025/06/26/como-criar-e-publicar-seu-proprio-pacote-php-no-packagist/
+
 ---
 Olá pessoal! Hoje quero compartilhar com vocês como criar e publicar pacotes PHP no Packagist. Você já criou um código PHP reutilizável e queria instalar em outro projeto sem a necessidade de ficar duplicando código e até compartilhar com a comunidade PHP?
 
@@ -184,5 +165,3 @@ Clique em "Submit" e seu pacote já se encontra no packagist para instalação:
 Link do repositório:
 
 [https://github.com/dtgfranca/package-soma](https://github.com/dtgfranca/package-soma)
-
-{{< adsense >}}

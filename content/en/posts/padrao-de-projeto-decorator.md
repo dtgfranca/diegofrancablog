@@ -1,40 +1,21 @@
 ---
-  card_desc: A few days ago, I was working on a system responsible for syncing data between two systems. The new task required reusing that same system to sync
-  card_image: http://diegofranca.dev/wp-content/uploads/2025/07/design.png
-  card_title: Decorator Design Pattern
-  og_desc: A few days ago, I was working on a system responsible for syncing data between two systems. The new task required reusing that same system to sync
-  og_image: http://diegofranca.dev/wp-content/uploads/2025/07/design.png
-  og_image_alt:
-  og_title: Decorator Design Pattern
-_edit_last: "1"
-_encloseme: "1"
-_pingme: "1"
-_thumbnail_id: "664"
-author: diego.tg.franca@gmail.com
+categories:
   - design-patterns
   - tips
   - php
+cover:
   alt: design
   image: /wp-content/uploads/2025/07/design.png
 date: "2025-07-08T12:59:17+00:00"
-fw:opt:ext:pb:page-builder:json: '[]'
-  page-builder: {}
-    builder_active: false
-    json: '[]'
-guid: https://diegofranca.dev/?p=595
-parent_post_id: null
-pms-content-restrict-custom-non-member-redirect-url:
-pms-content-restrict-custom-redirect-url:
-pms-content-restrict-message-logged_out:
-pms-content-restrict-message-non_members:
-pms-content-restrict-type: default
-post_id: "595"
+tags:
   - '#designpatterns'
   - architecture
   - software-engineering
   - php
-title: Decorator Design Pattern
+title: "Decorator Design Pattern"
+aliases:
   - /2025/07/08/padrao-de-projeto-decorator/
+
 ---
 A few days ago, I was working on a system responsible for syncing data between two systems. The new task required reusing that same system to sync with a **third** one, but with a few extras: I wanted to send a notification at the start, another at the end, add logs, and accept more parameters.
 

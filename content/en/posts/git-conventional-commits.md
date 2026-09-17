@@ -1,37 +1,21 @@
 ---
-  disable_ads: 0
-  card_desc: "Hey folks, how's it going? Today I'm sharing a tip on how to standardize commit messages in our projects. Sometimes when there's more than one developer"
-  card_image: http://diegofranca.dev/wp-content/uploads/2020/08/demo-4-compressed.png
-  card_title: GIT - Conventional Commits
-  og_desc: "Hey folks, how's it going? Today I'm sharing a tip on how to standardize commit messages in our projects. Sometimes when there's more than one developer"
-  og_image: http://diegofranca.dev/wp-content/uploads/2020/08/demo-4-compressed.png
-  og_image_alt:
-  og_title: GIT - Conventional Commits
-_edit_last: "1"
-_thumbnail_id: "304"
-_yoast_wpseo_content_score: "30"
-_yoast_wpseo_primary_category: "38"
-author: diego.tg.franca@gmail.com
+categories:
   - angular
   - tips
   - git
   - javascript
+cover:
   alt: demo-4-compressed
   image: /wp-content/uploads/2020/08/demo-4-compressed.png
 date: "2020-08-11T14:36:05+00:00"
-fw:opt:ext:pb:page-builder:json: '[]'
-  page-builder: {}
-    builder_active: false
-    json: '[]'
-guid: http://diegofranca.dev/?p=266
-parent_post_id: null
-post_id: "266"
-summary: "Hey folks, how's it going? Today I'm sharing a tip on how to standardize commit messages in our projects. Sometimes when there's more than one developer on the project and the rush of day-to-day life, the messages end up not being that great. It's very common to see the famous \"AD\" (various changes) or \"VA\" (multiple changes), which makes our dev life — which is already not easy — much harder :D."
+tags:
   - angular
   - conventional-commits
   - git
-title: GIT - Conventional Commits
+title: "GIT - Conventional Commits"
+aliases:
   - /2020/08/11/git-conventional-commits/
+
 ---
 Hey folks, how's it going? Today I'm sharing a tip on how to standardize commit messages in our projects. Sometimes when there's more than one developer on the project and the rush of day-to-day life, the messages end up not being that great. It's very common to see the famous "AD" (various changes) or "VA" (multiple changes), which makes our dev life — which is already not easy — much harder :D.
 

@@ -1,31 +1,18 @@
 ---
-  card_desc: "Sometimes we think that to refactor a code and make it more readable we need to do something complex, but that's not always the case — sometimes"
-  card_image: http://diegofranca.dev/wp-content/uploads/2021/01/clean-code-1-728.jpg
-  card_title: Clean Code - Magic Numbers
-  og_desc: "Sometimes we think that to refactor a code and make it more readable we need to do something complex, but that's not always the case — sometimes"
-  og_image: http://diegofranca.dev/wp-content/uploads/2021/01/clean-code-1-728.jpg
-  og_image_alt:
-  og_title: Clean Code - Magic Numbers
-_edit_last: "1"
-_thumbnail_id: "345"
-author: diego.tg.franca@gmail.com
+categories:
   - uncategorized
+cover:
   alt: clean-code-1-728
   image: /wp-content/uploads/2021/01/clean-code-1-728.jpg
 date: "2021-01-26T14:23:27+00:00"
-fw:opt:ext:pb:page-builder:json: '[]'
-  page-builder: {}
-    builder_active: false
-    json: '[]'
-guid: http://diegofranca.dev/?p=339
-parent_post_id: null
-post_id: "339"
-summary: "Sometimes we think that to refactor a code and make it more readable we need to do something complex, but that's not always the case — sometimes just renaming a variable to a name that matches what it really does is already a big step."
+tags:
   - clean-code
   - code-smell
   - php
-title: Clean Code - Magic Numbers
+title: "Clean Code - Magic Numbers"
+aliases:
   - /2021/01/26/clean-code-numeros-magicos/
+
 ---
 Sometimes we think that to refactor a code and make it more readable we need to do something complex, but that's not always the case — sometimes just renaming a variable to a name that matches what it really does is already a big step.
 

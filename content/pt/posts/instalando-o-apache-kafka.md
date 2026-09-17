@@ -1,30 +1,16 @@
 ---
-  card_desc: Fala, pessoal! Hoje gostaria de compartilhar com vocês um pouco sobre o Apache Kafka. Tenho trabalhado com o Kafka para fazer uma sincronização com vários b
-  card_image: http://diegofranca.dev/wp-content/uploads/2024/05/apache_kafka_logo-1200x547-1.png
-  card_title: Instalando o Apache Kafka
-  og_desc: Fala, pessoal! Hoje gostaria de compartilhar com vocês um pouco sobre o Apache Kafka. Tenho trabalhado com o Kafka para fazer uma sincronização com vários b
-  og_image: http://diegofranca.dev/wp-content/uploads/2024/05/apache_kafka_logo-1200x547-1.png
-  og_image_alt:
-  og_title: Instalando o Apache Kafka
-_edit_last: "1"
-_oembed_c489d0b81b680c45bb060213d62e56bb: '{{unknown}}'
-_thumbnail_id: "552"
-author: diego.tg.franca@gmail.com
+categories:
   - uncategorized
+cover:
   alt: apache_kafka_logo-1200x547
   image: /wp-content/uploads/2024/05/apache_kafka_logo-1200x547-1.png
 date: "2024-05-25T15:38:52+00:00"
-fw:opt:ext:pb:page-builder:json: '[]'
-  page-builder: {}
-    builder_active: false
-    json: '[]'
-guid: https://diegofranca.dev/?p=543
-parent_post_id: null
-post_id: "543"
-summary: '{{ double-space-with-newline }}Fala, pessoal! Hoje gostaria de compartilhar com vocês um pouco sobre o Apache Kafka. Tenho trabalhado com o Kafka para fazer uma sincronização com vários bancos de dados e achei interessante compartilhar um pouco do que venho aprendendo. Além disso, este artigo será uma forma de ter um local de fácil acesso caso eu tenha alguma dúvida no futuro.'
+tags:
   - kakfa
 title: Instalando o Apache Kafka
+aliases:
   - /2024/05/25/instalando-o-apache-kafka/
+
 ---
   
 Fala, pessoal! Hoje gostaria de compartilhar com vocês um pouco sobre o Apache Kafka. Tenho trabalhado com o Kafka para fazer uma sincronização com vários bancos de dados e achei interessante compartilhar um pouco do que venho aprendendo. Além disso, este artigo será uma forma de ter um local de fácil acesso caso eu tenha alguma dúvida no futuro.
@@ -119,5 +105,3 @@ advertised.listeners=PLAINTEXT://your.host.name:9092
 ```
 
 Após descomentar, adicione o endereço IP pelo qual você tem acesso externo. Depois de fazer isso, basta reiniciar o ZooKeeper e o broker para permitir a conexão remota com o Kafka.
-
-{{< adsense >}}

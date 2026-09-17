@@ -1,39 +1,14 @@
 ---
-  card_desc: |-
-    Lately I've been studying TDD in depth and how it can help us write good code.
-
-
-    Many developers still haven't adopted this
-  card_image: http://diegofranca.dev/wp-content/uploads/2021/03/TDD.jpg
-  card_title: TDD - Analyzing Feedback
-  og_desc: |-
-    Lately I've been studying TDD in depth and how it can help us write good code.
-
-
-    Many developers still haven't adopted this
-  og_image: http://diegofranca.dev/wp-content/uploads/2021/03/TDD.jpg
-  og_image_alt:
-  og_title: TDD - Analyzing Feedback
-_edit_last: "1"
-_thumbnail_id: "354"
-author: diego.tg.franca@gmail.com
+categories:
   - uncategorized
+cover:
   alt: TDD
   image: /wp-content/uploads/2021/03/TDD.jpg
 date: "2021-03-25T21:13:14+00:00"
-fw:opt:ext:pb:page-builder:json: '[]'
-  page-builder: {}
-    builder_active: false
-    json: '[]'
-guid: http://diegofranca.dev/?p=348
-parent_post_id: null
-post_id: "348"
-summary: |-
-  Lately I've been studying TDD in depth and how it can help us write good code.
-
-  Many developers still haven't adopted this practice — some because they lack knowledge, others because they think they lose productivity when writing tests before development.
-title: TDD - Analyzing Feedback
+title: "TDD - Analyzing Feedback"
+aliases:
   - /2021/03/05/tdd-analizando-feedbacks/
+
 ---
 Lately I've been studying TDD in depth and how it can help us write good code.
 

@@ -1,32 +1,19 @@
 ---
-  card_desc: Fala pessoal!! Hoje, vou ensinar como criar certificados apache auto assinado. Isso é muito importante quando estamos criando nossos sistemas web e queremos ad
-  card_image: http://diegofranca.dev/wp-content/uploads/2023/05/apache_ssl_featured.jpg
-  card_title: Instalando o certificado ssl no apache
-  og_desc: Fala pessoal!! Hoje, vou ensinar como criar certificados apache auto assinado. Isso é muito importante quando estamos criando nossos sistemas web e queremos ad
-  og_image: http://diegofranca.dev/wp-content/uploads/2023/05/apache_ssl_featured.jpg
-  og_image_alt:
-  og_title: Instalando o certificado ssl no apache
-_edit_last: "1"
-_thumbnail_id: "509"
-author: diego.tg.franca@gmail.com
+categories:
   - uncategorized
+cover:
   alt: apache_ssl_featured
   image: /wp-content/uploads/2023/05/apache_ssl_featured.jpg
 date: "2023-05-05T05:00:00+00:00"
-fw:opt:ext:pb:page-builder:json: '[]'
-  page-builder: {}
-    builder_active: false
-    json: '[]'
-guid: https://diegofranca.dev/?p=502
-parent_post_id: null
-post_id: "502"
-summary: Fala pessoal!! Hoje, vou ensinar como criar certificados apache auto assinado. Isso é muito importante quando estamos criando nossos sistemas web e queremos adicionar um certificado ssl no nosso servidor web. Nesse tutorial, estou utilizando Ubuntu 22.04.
+tags:
   - apache
   - openssl
   - ssl
   - web
 title: Instalando o certificado ssl no apache
+aliases:
   - /2023/05/05/instalando-o-certificado-ssl-no-apache/
+
 ---
 Fala pessoal!! Hoje, vou ensinar como criar certificados apache auto assinado. Isso é muito importante quando estamos criando nossos sistemas web e queremos adicionar um certificado ssl no nosso servidor web. Nesse tutorial, estou utilizando Ubuntu 22.04.
 
@@ -151,5 +138,3 @@ Agora, basta apenas reiniciar o apache e fazer o teste:
 ```
 $ sudo systemctl restart apache2
 ```
-
-{{< adsense >}}

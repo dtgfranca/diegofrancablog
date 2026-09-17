@@ -1,40 +1,15 @@
 ---
-  card_desc: |-
-    Hey folks!! In the past few days we were surprised by the news that Red Hat will no longer support CentOS — but what does that mean?
-
-
-    This means
-  card_image: http://diegofranca.dev/wp-content/uploads/2020/12/CentOS-Logo-featured.jpg
-  card_title: CentOS is dead — what now?
-  og_desc: |-
-    Hey folks!! In the past few days we were surprised by the news that Red Hat will no longer support CentOS — but what does that mean?
-
-
-    This means
-  og_image: http://diegofranca.dev/wp-content/uploads/2020/12/CentOS-Logo-featured.jpg
-  og_image_alt:
-  og_title: CentOS is dead — what now?
-_edit_last: "1"
-_thumbnail_id: "324"
-author: diego.tg.franca@gmail.com
+categories:
   - linux
   - servers
+cover:
   alt: CentOS-Logo-featured
   image: /wp-content/uploads/2020/12/CentOS-Logo-featured.jpg
 date: "2020-12-18T22:18:25+00:00"
-fw:opt:ext:pb:page-builder:json: '[]'
-  page-builder: {}
-    builder_active: false
-    json: '[]'
-guid: http://diegofranca.dev/?p=322
-parent_post_id: null
-post_id: "322"
-summary: |-
-  Hey folks!! In the past few days we were surprised by the news that Red Hat will no longer support CentOS — but what does that mean?
-
-  It means that CentOS Linux 8, which is a rebuild of Red Hat Enterprise Linux 8 (RHEL), will reach end of support in 2021.
-title: CentOS is dead — what now?
+title: "CentOS is dead — what now?"
+aliases:
   - /2020/12/18/o-centos-morreu-e-agora/
+
 ---
 Hey folks!! In the past few days we were surprised by the news that Red Hat will no longer support CentOS — but what does that mean?
 

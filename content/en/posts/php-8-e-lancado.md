@@ -1,51 +1,14 @@
 ---
-  card_desc: |-
-    The PHP development team announced the release of PHP 8 on November 26, 2020:
-
-
-
-    PHP 8.0 is a major update of the PHP language.
-
-
-    It cont
-  card_image: http://diegofranca.dev/wp-content/uploads/2020/12/novo-php8-pt.jpg
-  card_title: PHP 8 is released
-  og_desc: |-
-    The PHP development team announced the release of PHP 8 on November 26, 2020:
-
-
-
-    PHP 8.0 is a major update of the PHP language.
-
-
-    It cont
-  og_image: http://diegofranca.dev/wp-content/uploads/2020/12/novo-php8-pt.jpg
-  og_image_alt:
-  og_title: PHP 8 is released
-_edit_last: "1"
-_thumbnail_id: "318"
-author: diego.tg.franca@gmail.com
+categories:
   - uncategorized
+cover:
   alt: novo-php8-pt
   image: /wp-content/uploads/2020/12/novo-php8-pt.jpg
 date: "2020-12-06T14:08:32+00:00"
-fw:opt:ext:pb:page-builder:json: '[]'
-  page-builder: {}
-    builder_active: false
-    json: '[]'
-guid: http://diegofranca.dev/?p=315
-parent_post_id: null
-post_id: "315"
-summary: |-
-  The PHP development team [announced](https://www.php.net/releases/8.0/en.php) the release of PHP 8 on November 26, 2020:
-
-  > _PHP 8.0 is a major update of the PHP language._
-  >
-  > _It contains many new features and optimizations including named arguments, union types, attributes, constructor property promotion, match expression, nullsafe operator, JIT, and improvements in the type system, error handling, and consistency._
-  >
-  >
-title: PHP 8 is released
+title: "PHP 8 is released"
+aliases:
   - /2020/12/06/php-8-e-lancado/
+
 ---
 The PHP development team [announced](https://www.php.net/releases/8.0/en.php) the release of PHP 8 on November 26, 2020:
 

@@ -1,32 +1,19 @@
 ---
-  card_desc: "Hey folks!! Today I'll show you how to create self-signed Apache certificates. This is very important when we're setting up our web systems and we"
-  card_image: http://diegofranca.dev/wp-content/uploads/2023/05/apache_ssl_featured.jpg
-  card_title: Installing an SSL certificate on Apache
-  og_desc: "Hey folks!! Today I'll show you how to create self-signed Apache certificates. This is very important when we're setting up our web systems and we"
-  og_image: http://diegofranca.dev/wp-content/uploads/2023/05/apache_ssl_featured.jpg
-  og_image_alt:
-  og_title: Installing an SSL certificate on Apache
-_edit_last: "1"
-_thumbnail_id: "509"
-author: diego.tg.franca@gmail.com
+categories:
   - uncategorized
+cover:
   alt: apache_ssl_featured
   image: /wp-content/uploads/2023/05/apache_ssl_featured.jpg
 date: "2023-05-05T05:00:00+00:00"
-fw:opt:ext:pb:page-builder:json: '[]'
-  page-builder: {}
-    builder_active: false
-    json: '[]'
-guid: https://diegofranca.dev/?p=502
-parent_post_id: null
-post_id: "502"
-summary: "Hey folks!! Today I'll show you how to create self-signed Apache certificates. This is very important when we're setting up our web systems and want to add an SSL certificate to our web server. In this tutorial, I'm using Ubuntu 22.04."
+tags:
   - apache
   - openssl
   - ssl
   - web
-title: Installing an SSL certificate on Apache
+title: "Installing an SSL certificate on Apache"
+aliases:
   - /2023/05/05/instalando-o-certificado-ssl-no-apache/
+
 ---
 Hey folks!! Today I'll show you how to create self-signed Apache certificates. This is very important when we're setting up our web systems and want to add an SSL certificate to our web server. In this tutorial, I'm using Ubuntu 22.04.
 

@@ -1,40 +1,21 @@
 ---
-  card_desc: Alguns dias atrás, eu estava trabalhando em um sistema responsável por sincronizar dados entre dois sistemas. A nova tarefa exigia reutilizar esse mesmo siste
-  card_image: http://diegofranca.dev/wp-content/uploads/2025/07/design.png
-  card_title: Padrão de projeto Decorator
-  og_desc: Alguns dias atrás, eu estava trabalhando em um sistema responsável por sincronizar dados entre dois sistemas. A nova tarefa exigia reutilizar esse mesmo siste
-  og_image: http://diegofranca.dev/wp-content/uploads/2025/07/design.png
-  og_image_alt:
-  og_title: Padrão de projeto Decorator
-_edit_last: "1"
-_encloseme: "1"
-_pingme: "1"
-_thumbnail_id: "664"
-author: diego.tg.franca@gmail.com
+categories:
   - design-patterns
   - dicas
   - php
+cover:
   alt: design
   image: /wp-content/uploads/2025/07/design.png
 date: "2025-07-08T12:59:17+00:00"
-fw:opt:ext:pb:page-builder:json: '[]'
-  page-builder: {}
-    builder_active: false
-    json: '[]'
-guid: https://diegofranca.dev/?p=595
-parent_post_id: null
-pms-content-restrict-custom-non-member-redirect-url:
-pms-content-restrict-custom-redirect-url:
-pms-content-restrict-message-logged_out:
-pms-content-restrict-message-non_members:
-pms-content-restrict-type: default
-post_id: "595"
+tags:
   - '#designpatterns'
   - architecture
   - engenharia-e-software
   - php
 title: Padrão de projeto Decorator
+aliases:
   - /2025/07/08/padrao-de-projeto-decorator/
+
 ---
 Alguns dias atrás, eu estava trabalhando em um sistema responsável por sincronizar dados entre dois sistemas. A nova tarefa exigia reutilizar esse mesmo sistema para sincronizar com um **terceiro**, mas com alguns extras: eu queria enviar uma notificação no início, outra no fim, adicionar logs e aceitar mais parâmetros.
 
@@ -242,5 +223,3 @@ Em projetos legados, onde mexer em código antigo pode gerar bugs inesperados, u
 O código completo está disponível no GitHub, caso queira testar e brincar com outras combinações:
 
 [https://github.dev/dtgfranca/design-pattern-decorator](https://github.dev/dtgfranca/design-pattern-decorator)
-
-{{< adsense >}}

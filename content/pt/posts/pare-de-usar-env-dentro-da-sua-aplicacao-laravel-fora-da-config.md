@@ -1,36 +1,18 @@
 ---
-  card_desc: Venho compartilhar com vocês uma dica rápida sobre o Laravel. Vejo muitas pessoas enfrentando problemas ao tentar acessar variáveis de ambiente dentro da apl
-  card_image: http://diegofranca.dev/wp-content/uploads/2025/06/laravel.png
-  card_title: Pare de usar env() dentro da sua aplicação Laravel (fora da config)
-  og_desc: Venho compartilhar com vocês uma dica rápida sobre o Laravel. Vejo muitas pessoas enfrentando problemas ao tentar acessar variáveis de ambiente dentro da apl
-  og_image: http://diegofranca.dev/wp-content/uploads/2025/06/laravel.png
-  og_image_alt:
-  og_title: Pare de usar env() dentro da sua aplicação Laravel (fora da config)
-_edit_last: "1"
-_thumbnail_id: "601"
-author: diego.tg.franca@gmail.com
+categories:
   - frameworks
   - php
+cover:
   alt: laravel
   image: /wp-content/uploads/2025/06/laravel.png
 date: "2025-06-18T18:13:36+00:00"
-fw:opt:ext:pb:page-builder:json: '[]'
-  page-builder: {}
-    builder_active: false
-    json: '[]'
-guid: https://diegofranca.dev/?p=598
-parent_post_id: null
-pms-content-restrict-custom-non-member-redirect-url:
-pms-content-restrict-custom-redirect-url:
-pms-content-restrict-message-logged_out:
-pms-content-restrict-message-non_members:
-pms-content-restrict-type: default
-post_id: "598"
-summary: Venho compartilhar com vocês uma dica rápida sobre o Laravel. Vejo muitas pessoas enfrentando problemas ao tentar acessar variáveis de ambiente dentro da aplicação. O erro mais comum acontece quando os desenvolvedores utilizam a função `env()` diretamente em suas classes ou serviços, para ler configurações do arquivo `.env`, e depois não entendem por que, em alguns momentos, essa função retorna `null`.
+tags:
   - laravel
   - php
 title: Pare de usar env() dentro da sua aplicação Laravel (fora da config)
+aliases:
   - /2025/06/18/pare-de-usar-env-dentro-da-sua-aplicacao-laravel-fora-da-config/
+
 ---
 Venho compartilhar com vocês uma dica rápida sobre o Laravel. Vejo muitas pessoas enfrentando problemas ao tentar acessar variáveis de ambiente dentro da aplicação. O erro mais comum acontece quando os desenvolvedores utilizam a função `env()` diretamente em suas classes ou serviços, para ler configurações do arquivo `.env`, e depois não entendem por que, em alguns momentos, essa função retorna `null`.
 
@@ -59,5 +41,3 @@ config('configuracao.chave')
 ```
 
 Seguindo esse padrão, você evita problemas com `null` e garante que sua aplicação seja compatível com o cache de configuração.
-
-{{< adsense >}}

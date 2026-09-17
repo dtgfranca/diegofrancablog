@@ -1,33 +1,15 @@
 ---
-  disable_ads: 0
-  card_desc: Fala galera, beleza? Então, estou aqui para ajudar aquelas pessoas que começaram a utilizar o Git e ainda  encontra dificuldades com os comandos. Nesse tutori
-  card_image: http://diegofranca.dev/wp-content/uploads/2020/08/q7uy4yxekcljpr70p2xk-1.png
-  card_title: Comandos básicos do Git
-  og_desc: Fala galera, beleza? Então, estou aqui para ajudar aquelas pessoas que começaram a utilizar o Git e ainda  encontra dificuldades com os comandos. Nesse tutori
-  og_image: http://diegofranca.dev/wp-content/uploads/2020/08/q7uy4yxekcljpr70p2xk-1.png
-  og_image_alt:
-  og_title: Comandos básicos do Git
-_edit_last: "1"
-_oembed_2e913e920278affba76725474485ca50: '{{unknown}}'
-_thumbnail_id: "262"
-_yoast_wpseo_content_score: "60"
-_yoast_wpseo_primary_category: "37"
-author: diego.tg.franca@gmail.com
+categories:
   - dicas
   - git
+cover:
   alt: q7uy4yxekcljpr70p2xk-1
   image: /wp-content/uploads/2020/08/q7uy4yxekcljpr70p2xk-1.png
 date: "2020-08-14T23:32:58+00:00"
-fw:opt:ext:pb:page-builder:json: '[]'
-  page-builder: {}
-    builder_active: false
-    json: '[]'
-guid: http://diegofranca.dev/?p=252
-parent_post_id: null
-post_id: "252"
-summary: Fala galera, beleza? Então, estou aqui para ajudar aquelas pessoas que começaram a utilizar o Git e ainda encontra dificuldades com os comandos. Nesse tutorial irei demonstrar alguns comandos que irá facilitar muito na sua jornada de aprendizagem.
 title: Comandos básicos do Git
+aliases:
   - /2020/08/05/comandos-basicos-do-git/
+
 ---
 Fala galera, beleza? Então, estou aqui para ajudar aquelas pessoas que começaram a utilizar o Git e ainda encontra dificuldades com os comandos. Nesse tutorial irei demonstrar alguns comandos que irá facilitar muito na sua jornada de aprendizagem.
 
@@ -63,5 +45,3 @@ Local: `git clone /path/to/repository`
 [https://education.github.com/git-cheat-sheet-education.pdf](https://education.github.com/git-cheat-sheet-education.pdf)
 
 [htt](https://www.hostinger.com/tutorials/basic-git-commands) [ps://www.hostinger.com/tutorials/basic-git-commands](https://www.hostinger.com/tutorials/basic-git-commands)
-
-{{< adsense >}}

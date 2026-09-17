@@ -1,39 +1,20 @@
 ---
-  disable_ads: 0
-  card_desc: 'Fala,  pessoal! Hoje tenho algo interessante sobre api restful. Quando você está criando uma api restful já parou para pensar se o que estamos desenvolvendo '
-  card_image: http://diegofranca.dev/wp-content/uploads/2022/01/44007397-0330098e-9e6b-11e8-91e0-24a2cf5d3b55.png
-  card_title: Modelo de maturidade de Richardson - Mensurando a maturidade da sua api
-  og_desc: 'Fala,  pessoal! Hoje tenho algo interessante sobre api restful. Quando você está criando uma api restful já parou para pensar se o que estamos desenvolvendo '
-  og_image: http://diegofranca.dev/wp-content/uploads/2022/01/44007397-0330098e-9e6b-11e8-91e0-24a2cf5d3b55.png
-  og_image_alt:
-  og_title: Modelo de maturidade de Richardson - Mensurando a maturidade da sua api
-_edit_last: "1"
-_thumbnail_id: "454"
-author: diego.tg.franca@gmail.com
+categories:
   - arquitetura
   - uncategorized
+cover:
   alt: 44007397-0330098e-9e6b-11e8-91e0-24a2cf5d3b55
   image: /wp-content/uploads/2022/01/44007397-0330098e-9e6b-11e8-91e0-24a2cf5d3b55.png
 date: "2022-01-03T12:35:45+00:00"
-fw:opt:ext:pb:page-builder:json: '[]'
-  page-builder: {}
-    builder_active: false
-    json: '[]'
-guid: http://diegofranca.dev/?p=381
-parent_post_id: null
-pms-content-restrict-custom-non-member-redirect-url:
-pms-content-restrict-custom-redirect-url:
-pms-content-restrict-message-logged_out:
-pms-content-restrict-message-non_members:
-pms-content-restrict-type: default
-post_id: "381"
-summary: Fala, pessoal! Hoje tenho algo interessante sobre api restful. Quando você está criando uma api restful já parou para pensar se o que estamos desenvolvendo está correto e se existe algum padrão a ser seguido ao criar uma api restful?
+tags:
   - architecture
   - php
   - rest
   - richardson-maturity
 title: Modelo de maturidade de Richardson - Mensurando a maturidade da sua api
+aliases:
   - /2022/01/03/modelo-de-maturidade-de-richardson-mensurando-a-maturidade-da-sua-api/
+
 ---
 Fala, pessoal! Hoje tenho algo interessante sobre api restful. Quando você está criando uma api restful já parou para pensar se o que estamos desenvolvendo está correto e se existe algum padrão a ser seguido ao criar uma api restful?
 
@@ -151,5 +132,3 @@ Além de ter implementado os níveis acima, adicionamos o HATEOAS(hipermedias) n
 [Richardson's maturity model - Martin Fowler](https://martinfowler.com/articles/richardsonMaturityModel.html)
 
 [O que é uma api Restful na prática? Maturidade de Richardson](https://www.youtube.com/watch?v=P92SBaN42mQ)
-
-{{< adsense >}}

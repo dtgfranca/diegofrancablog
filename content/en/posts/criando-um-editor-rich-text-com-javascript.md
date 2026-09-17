@@ -1,24 +1,12 @@
 ---
-  card_desc: "Building a text editor with JavaScript isn't as hard as some might think. Creating your own editor can give you much more freedom than relying on a third-party editor"
-  card_image:
-  card_title: Creating a rich text editor with JavaScript
-  og_desc: "Building a text editor with JavaScript isn't as hard as some might think. Creating your own editor can give you much more freedom than relying on a third-party editor"
-  og_image:
-  og_image_alt:
-  og_title: Creating a rich text editor with JavaScript
-_edit_last: "1"
-author: diego.tg.franca@gmail.com
+categories:
   - uncategorized
 date: "2023-05-05T12:37:01+00:00"
 draft: "true"
-fw:opt:ext:pb:page-builder:json: '[]'
-  page-builder: {}
-    builder_active: false
-    json: '[]'
-guid: http://diegofranca.dev/?p=375
-parent_post_id: null
-post_id: "375"
-title: Creating a rich text editor with JavaScript
+title: "Creating a rich text editor with JavaScript"
+aliases:
+  - /
+
 ---
 Building a text editor with JavaScript isn't as hard as some might think. Creating your own editor can give you much more freedom than relying on a third-party one.
 

@@ -1,31 +1,18 @@
 ---
-  card_desc: As vezes pensamos que para refatorar um código e torná-lo mais legível precisamos de fazer algo complexo, mas nem sempre isso é necessário, as vezes trocar
-  card_image: http://diegofranca.dev/wp-content/uploads/2021/01/clean-code-1-728.jpg
-  card_title: Clean Code - Números mágicos
-  og_desc: As vezes pensamos que para refatorar um código e torná-lo mais legível precisamos de fazer algo complexo, mas nem sempre isso é necessário, as vezes trocar
-  og_image: http://diegofranca.dev/wp-content/uploads/2021/01/clean-code-1-728.jpg
-  og_image_alt:
-  og_title: Clean Code - Números mágicos
-_edit_last: "1"
-_thumbnail_id: "345"
-author: diego.tg.franca@gmail.com
+categories:
   - uncategorized
+cover:
   alt: clean-code-1-728
   image: /wp-content/uploads/2021/01/clean-code-1-728.jpg
 date: "2021-01-26T14:23:27+00:00"
-fw:opt:ext:pb:page-builder:json: '[]'
-  page-builder: {}
-    builder_active: false
-    json: '[]'
-guid: http://diegofranca.dev/?p=339
-parent_post_id: null
-post_id: "339"
-summary: As vezes pensamos que para refatorar um código e torná-lo mais legível precisamos de fazer algo complexo, mas nem sempre isso é necessário, as vezes trocar um nome de uma variável para um nome que condiz com o que ela realmente faz, já é um grande passo.
+tags:
   - clean-code
   - code-smell
   - php
 title: Clean Code - Números mágicos
+aliases:
   - /2021/01/26/clean-code-numeros-magicos/
+
 ---
 As vezes pensamos que para refatorar um código e torná-lo mais legível precisamos de fazer algo complexo, mas nem sempre isso é necessário, as vezes trocar um nome de uma variável para um nome que condiz com o que ela realmente faz, já é um grande passo.
 
@@ -48,5 +35,3 @@ Criei uma nova classe onde defini algumas constantes para representar os código
 Depois troquei os números pelas constantes e pode-se ver o quanto melhorou o entendimento do código:
 
 {{< figure src="/wp-content/uploads/2021/01/3-1.jpeg" alt="" caption="" >}}
-
-{{< adsense >}}

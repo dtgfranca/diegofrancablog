@@ -1,28 +1,14 @@
 ---
-  card_desc: Falaa galera, como vocês estão? Hoje eu venho com uma novidade para vocês que programam em php, vou criar uma série onde eu vou mostrar quais são as melhor
-  card_image: http://diegofranca.dev/wp-content/uploads/2021/03/social-banner.png
-  card_title: Boas práticas com PHP (PSR) Parte-1
-  og_desc: Falaa galera, como vocês estão? Hoje eu venho com uma novidade para vocês que programam em php, vou criar uma série onde eu vou mostrar quais são as melhor
-  og_image: http://diegofranca.dev/wp-content/uploads/2021/03/social-banner.png
-  og_image_alt:
-  og_title: Boas práticas com PHP (PSR) Parte-1
-_edit_last: "1"
-_thumbnail_id: "372"
-author: diego.tg.franca@gmail.com
+categories:
   - php
+cover:
   alt: social-banner
   image: /wp-content/uploads/2021/03/social-banner.png
 date: "2021-03-27T20:03:37+00:00"
-fw:opt:ext:pb:page-builder:json: '[]'
-  page-builder: {}
-    builder_active: false
-    json: '[]'
-guid: http://diegofranca.dev/?p=336
-parent_post_id: null
-post_id: "336"
-summary: Falaa galera, como vocês estão? Hoje eu venho com uma novidade para vocês que programam em php, vou criar uma série onde eu vou mostrar quais são as melhores práticas no densenvolvimento em php de acordo com as PSRs. Sem mais delongas, vamos iniciar.
 title: Boas práticas com PHP (PSR) Parte-1
+aliases:
   - /2021/03/27/boas-praticas-com-php-psr-parte-1/
+
 ---
 Falaa galera, como vocês estão? Hoje eu venho com uma novidade para vocês que programam em php, vou criar uma série onde eu vou mostrar quais são as melhores práticas no densenvolvimento em php de acordo com as PSRs. Sem mais delongas, vamos iniciar.
 
@@ -101,5 +87,3 @@ Qualquer convenção de nomenclatura DEVE ser usada e aplicada de forma consiste
 #### 4.3 - Metódos
 
 Nomes de métodos DEVEM ser declarados em camelCase().
-
-{{< adsense >}}

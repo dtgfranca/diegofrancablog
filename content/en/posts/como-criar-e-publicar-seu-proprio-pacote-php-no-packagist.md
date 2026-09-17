@@ -1,39 +1,20 @@
 ---
-  card_desc: "Hello everyone! Today I want to share with you how to create and publish PHP packages on Packagist. Have you ever written reusable PHP code and wanted"
-  card_image: http://diegofranca.dev/wp-content/uploads/2025/06/private-packagist-for-vendors.png
-  card_title: How to create and publish your own PHP package on Packagist
-  og_desc: "Hello everyone! Today I want to share with you how to create and publish PHP packages on Packagist. Have you ever written reusable PHP code and wanted"
-  og_image: http://diegofranca.dev/wp-content/uploads/2025/06/private-packagist-for-vendors.png
-  og_image_alt:
-  og_title: How to create and publish your own PHP package on Packagist
-_edit_last: "1"
-_thumbnail_id: "631"
-_wp_old_date: "2025-06-25"
-author: diego.tg.franca@gmail.com
+categories:
   - tips
   - php
+cover:
   alt: private-packagist-for-vendors
   image: /wp-content/uploads/2025/06/private-packagist-for-vendors.png
 date: "2025-06-26T00:41:10+00:00"
-fw:opt:ext:pb:page-builder:json: '[]'
-  page-builder: {}
-    builder_active: false
-    json: '[]'
-guid: https://diegofranca.dev/?p=593
-parent_post_id: null
-pms-content-restrict-custom-non-member-redirect-url:
-pms-content-restrict-custom-redirect-url:
-pms-content-restrict-message-logged_out:
-pms-content-restrict-message-non_members:
-pms-content-restrict-type: default
-post_id: "593"
-summary: Hello everyone! Today I want to share with you how to create and publish PHP packages on Packagist. Have you ever written reusable PHP code and wanted to install it in another project without duplicating it — and even share it with the PHP community?
+tags:
   - composer
   - software-engineering
   - packagist
   - php
-title: How to create and publish your own PHP package on Packagist
+title: "How to create and publish your own PHP package on Packagist"
+aliases:
   - /2025/06/26/como-criar-e-publicar-seu-proprio-pacote-php-no-packagist/
+
 ---
 Hello everyone! Today I want to share with you how to create and publish PHP packages on Packagist. Have you ever written reusable PHP code and wanted to install it in another project without duplicating it — and even share it with the PHP community?
 

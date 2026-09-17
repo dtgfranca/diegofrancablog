@@ -1,33 +1,20 @@
 ---
-  card_desc: 'A idéia de escrever esse post surgiu após eu fazer uma apresentação sobre testes unitários na empresa que trabalho. Durante a apresentação,  fiz um live '
-  card_image: http://diegofranca.dev/wp-content/uploads/2023/02/system-bug.jpg
-  card_title: Desbravando testes unitários
-  og_desc: 'A idéia de escrever esse post surgiu após eu fazer uma apresentação sobre testes unitários na empresa que trabalho. Durante a apresentação,  fiz um live '
-  og_image: http://diegofranca.dev/wp-content/uploads/2023/02/system-bug.jpg
-  og_image_alt:
-  og_title: Desbravando testes unitários
-_edit_last: "1"
-_thumbnail_id: "479"
-author: diego.tg.franca@gmail.com
+categories:
   - php
   - teste
+cover:
   alt: system-bug
   image: /wp-content/uploads/2023/02/system-bug.jpg
 date: "2023-02-17T20:23:38+00:00"
-fw:opt:ext:pb:page-builder:json: '[]'
-  page-builder: {}
-    builder_active: false
-    json: '[]'
-guid: https://diegofranca.dev/?p=469
-parent_post_id: null
-post_id: "469"
-summary: A idéia de escrever esse post surgiu após eu fazer uma apresentação sobre testes unitários na empresa que trabalho. Durante a apresentação, fiz um live code em que criei um endpoint na qual utilizei os conceitos, que irei abordar, para fazermos a isolação do componente. Gostaria muito de fazer uma aplicação aqui no blog, mas pode ser que fique muito tedioso fazer um passo a passo. Então, decidi fazer um resumo do que foi apresentado, com exemplos de código para melhor entendimento.
+tags:
   - engenharia-e-software
   - php
   - teste
   - testes-unitarios
 title: Desbravando testes unitários
+aliases:
   - /2023/02/17/desbravando-testes-unitarios/
+
 ---
 A idéia de escrever esse post surgiu após eu fazer uma apresentação sobre testes unitários na empresa que trabalho. Durante a apresentação, fiz um live code em que criei um endpoint na qual utilizei os conceitos, que irei abordar, para fazermos a isolação do componente. Gostaria muito de fazer uma aplicação aqui no blog, mas pode ser que fique muito tedioso fazer um passo a passo. Então, decidi fazer um resumo do que foi apresentado, com exemplos de código para melhor entendimento.
 
@@ -111,5 +98,3 @@ Outra dica para quem está começando agora e quer escrever bons testes, é segu
 Todos esses conceitos que abordei estão disponíveis em todas as linguagens de programação.
 
 Espero que este artigo possa ajudá-lo de alguma forma. Caso tenha alguma duvida crítica (sempre são muito bem vindas), deixe nos comentários.
-
-{{< adsense >}}

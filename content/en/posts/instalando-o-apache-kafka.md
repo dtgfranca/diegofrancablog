@@ -1,30 +1,16 @@
 ---
-  card_desc: "Hey folks! Today I'd like to share a bit about Apache Kafka. I've been working with Kafka to sync data across multiple databases and"
-  card_image: http://diegofranca.dev/wp-content/uploads/2024/05/apache_kafka_logo-1200x547-1.png
-  card_title: Installing Apache Kafka
-  og_desc: "Hey folks! Today I'd like to share a bit about Apache Kafka. I've been working with Kafka to sync data across multiple databases and"
-  og_image: http://diegofranca.dev/wp-content/uploads/2024/05/apache_kafka_logo-1200x547-1.png
-  og_image_alt:
-  og_title: Installing Apache Kafka
-_edit_last: "1"
-_oembed_c489d0b81b680c45bb060213d62e56bb: '{{unknown}}'
-_thumbnail_id: "552"
-author: diego.tg.franca@gmail.com
+categories:
   - uncategorized
+cover:
   alt: apache_kafka_logo-1200x547
   image: /wp-content/uploads/2024/05/apache_kafka_logo-1200x547-1.png
 date: "2024-05-25T15:38:52+00:00"
-fw:opt:ext:pb:page-builder:json: '[]'
-  page-builder: {}
-    builder_active: false
-    json: '[]'
-guid: https://diegofranca.dev/?p=543
-parent_post_id: null
-post_id: "543"
-summary: '{{ double-space-with-newline }}Hey folks! Today I'd like to share a bit about Apache Kafka. I've been working with Kafka to sync data across multiple databases and thought it would be interesting to share some of what I've been learning. Also, this article will be a place I can easily come back to whenever I have a question in the future.
+tags:
   - kafka
-title: Installing Apache Kafka
+title: "Installing Apache Kafka"
+aliases:
   - /2024/05/25/instalando-o-apache-kafka/
+
 ---
 
 Hey folks! Today I'd like to share a bit about Apache Kafka. I've been working with Kafka to sync data across multiple databases and thought it would be interesting to share some of what I've been learning. Also, this article will be a place I can easily come back to whenever I have a question in the future.

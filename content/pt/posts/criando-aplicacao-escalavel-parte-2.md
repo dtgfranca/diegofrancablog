@@ -1,27 +1,11 @@
 ---
-  disable_ads: 0
-  card_desc: 'Fala pessoal! Tudo bem com vocês? Seguindo a nossa jornada da criação de uma aplicação escalável, nessa segunda parte venho contar para vocês como foi o '
-  card_image: http://diegofranca.dev/wp-content/uploads/2021/07/21184018666362.jpg
-  card_title: Criando aplicação escalável — Parte 2
-  og_desc: 'Fala pessoal! Tudo bem com vocês? Seguindo a nossa jornada da criação de uma aplicação escalável, nessa segunda parte venho contar para vocês como foi o '
-  og_image: http://diegofranca.dev/wp-content/uploads/2021/07/21184018666362.jpg
-  og_image_alt:
-  og_title: Criando aplicação escalável — Parte 2
-_edit_last: "1"
-_thumbnail_id: "391"
-author: diego.tg.franca@gmail.com
+categories:
   - uncategorized
+cover:
   alt: "21184018666362"
   image: /wp-content/uploads/2021/07/21184018666362.jpg
 date: "2021-07-18T13:37:58+00:00"
-fw:opt:ext:pb:page-builder:json: '[]'
-  page-builder: {}
-    builder_active: false
-    json: '[]'
-guid: http://diegofranca.dev/?p=393
-parent_post_id: null
-post_id: "393"
-summary: Fala pessoal! Tudo bem com vocês? Seguindo a nossa jornada da criação de uma aplicação escalável, nessa segunda parte venho contar para vocês como foi o início dos testes, [para quem não leu a primeira parte clique aqui](https://diegofranca.dev/2021/07/04/criando-aplicacao-escalavel-parte-1/).
+tags:
   - escalabilidade
   - heroku
   - k6
@@ -29,7 +13,9 @@ summary: Fala pessoal! Tudo bem com vocês? Seguindo a nossa jornada da criaçã
   - teste-de-carga
   - testing
 title: Criando aplicação escalável — Parte 2
+aliases:
   - /2021/07/18/criando-aplicacao-escalavel-parte-2/
+
 ---
 Fala pessoal! Tudo bem com vocês? Seguindo a nossa jornada da criação de uma aplicação escalável, nessa segunda parte venho contar para vocês como foi o início dos testes, [para quem não leu a primeira parte clique aqui](/2021/07/04/criando-aplicacao-escalavel-parte-1/).
 
@@ -68,5 +54,3 @@ Já percebemos a diferença entre dois servidores, nessa segunda parte conseguim
 O próximo passo será estudar sobre a escalabilidade horizontal e vertical, nesse primeiro teste podemos perceber que o nosso servidor ainda é muito fraco talvez seja melhor aumentar a memória para isso terei que mudar o plano do Heroku, tentarei estudar um pouco mais sobre esse serviço, ainda não estou certo que fazer, mas vamos continuando e aprendendo juntos nessa longa jornada…
 
 Caso você ficou curioso em saber sobre as métricas do k6 mais profundamente, segue o link da documentação: https://k6.io/docs/using-k6/metrics/
-
-{{< adsense >}}

@@ -1,36 +1,18 @@
 ---
-  card_desc: I want to share a quick tip about Laravel. I see many people running into trouble when trying to access environment variables inside their app
-  card_image: http://diegofranca.dev/wp-content/uploads/2025/06/laravel.png
-  card_title: Stop using env() inside your Laravel application (outside of config/)
-  og_desc: I want to share a quick tip about Laravel. I see many people running into trouble when trying to access environment variables inside their app
-  og_image: http://diegofranca.dev/wp-content/uploads/2025/06/laravel.png
-  og_image_alt:
-  og_title: Stop using env() inside your Laravel application (outside of config/)
-_edit_last: "1"
-_thumbnail_id: "601"
-author: diego.tg.franca@gmail.com
+categories:
   - frameworks
   - php
+cover:
   alt: laravel
   image: /wp-content/uploads/2025/06/laravel.png
 date: "2025-06-18T18:13:36+00:00"
-fw:opt:ext:pb:page-builder:json: '[]'
-  page-builder: {}
-    builder_active: false
-    json: '[]'
-guid: https://diegofranca.dev/?p=598
-parent_post_id: null
-pms-content-restrict-custom-non-member-redirect-url:
-pms-content-restrict-custom-redirect-url:
-pms-content-restrict-message-logged_out:
-pms-content-restrict-message-non_members:
-pms-content-restrict-type: default
-post_id: "598"
-summary: "I want to share a quick tip about Laravel. I see many people running into trouble when trying to access environment variables inside the application. The most common mistake happens when developers use the `env()` function directly inside their classes or services to read settings from the `.env` file, and then can't figure out why, in some situations, that function returns `null`."
+tags:
   - laravel
   - php
-title: Stop using env() inside your Laravel application (outside of config/)
+title: "Stop using env() inside your Laravel application (outside of config/)"
+aliases:
   - /2025/06/18/pare-de-usar-env-dentro-da-sua-aplicacao-laravel-fora-da-config/
+
 ---
 I want to share a quick tip about Laravel. I see many people running into trouble when trying to access environment variables inside the application. The most common mistake happens when developers use the `env()` function directly inside their classes or services to read settings from the `.env` file, and then can't figure out why, in some situations, that function returns `null`.
 

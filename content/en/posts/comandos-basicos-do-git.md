@@ -1,33 +1,15 @@
 ---
-  disable_ads: 0
-  card_desc: "Hey folks, how's it going? I'm here to help those who started using Git and still struggle with the commands. In this tutorial I'll"
-  card_image: http://diegofranca.dev/wp-content/uploads/2020/08/q7uy4yxekcljpr70p2xk-1.png
-  card_title: Basic Git Commands
-  og_desc: "Hey folks, how's it going? I'm here to help those who started using Git and still struggle with the commands. In this tutorial I'll"
-  og_image: http://diegofranca.dev/wp-content/uploads/2020/08/q7uy4yxekcljpr70p2xk-1.png
-  og_image_alt:
-  og_title: Basic Git Commands
-_edit_last: "1"
-_oembed_2e913e920278affba76725474485ca50: '{{unknown}}'
-_thumbnail_id: "262"
-_yoast_wpseo_content_score: "60"
-_yoast_wpseo_primary_category: "37"
-author: diego.tg.franca@gmail.com
+categories:
   - tips
   - git
+cover:
   alt: q7uy4yxekcljpr70p2xk-1
   image: /wp-content/uploads/2020/08/q7uy4yxekcljpr70p2xk-1.png
 date: "2020-08-14T23:32:58+00:00"
-fw:opt:ext:pb:page-builder:json: '[]'
-  page-builder: {}
-    builder_active: false
-    json: '[]'
-guid: http://diegofranca.dev/?p=252
-parent_post_id: null
-post_id: "252"
-summary: "Hey folks, how's it going? I'm here to help those who started using Git and still struggle with the commands. In this tutorial I'll demonstrate some commands that will make your learning journey much easier."
-title: Basic Git Commands
+title: "Basic Git Commands"
+aliases:
   - /2020/08/05/comandos-basicos-do-git/
+
 ---
 Hey folks, how's it going? I'm here to help those who started using Git and still struggle with the commands. In this tutorial I'll demonstrate some commands that will make your learning journey much easier.
 

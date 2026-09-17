@@ -1,34 +1,19 @@
 ---
-  disable_ads: 0
-  card_desc: Fala pessoal!!! Venho trabalhando com o PHP e MySql alguns anos e nos últimos meses precisei fazer a conexão com o Oracle. Passei muito tempo pesquisando e ho
-  card_image: http://diegofranca.dev/wp-content/uploads/2020/05/Php_Oracle_ImagePost.png
-  card_title: Configurando o OCI8 e PDO_OCI no PHP7
-  og_desc: Fala pessoal!!! Venho trabalhando com o PHP e MySql alguns anos e nos últimos meses precisei fazer a conexão com o Oracle. Passei muito tempo pesquisando e ho
-  og_image: http://diegofranca.dev/wp-content/uploads/2020/05/Php_Oracle_ImagePost.png
-  og_image_alt:
-  og_title: Configurando o OCI8 e PDO_OCI no PHP7
-_edit_last: "1"
-_thumbnail_id: "220"
-_yoast_wpseo_content_score: "60"
-author: diego.tg.franca@gmail.com
+categories:
   - uncategorized
+cover:
   alt: Php_Oracle_ImagePost
   image: /wp-content/uploads/2020/05/Php_Oracle_ImagePost.png
 date: "2020-05-07T11:44:48+00:00"
-fw:opt:ext:pb:page-builder:json: '[]'
-  page-builder: {}
-    builder_active: false
-    json: '[]'
-guid: http://diegofranca.dev/?p=219
-parent_post_id: null
-post_id: "219"
-summary: Fala pessoal!!! Venho trabalhando com o PHP e MySql alguns anos e nos últimos meses precisei fazer a conexão com o Oracle. Passei muito tempo pesquisando e hoje gostaria de criar um tutorial simples para que vocês possam ter uma fonte confiável de como realizar essa instalação. Eu utilizei o Ubuntu 16.04 e o PHP 7.0.
+tags:
   - oci8
   - oracle
   - pdo_oci
   - php7
 title: Configurando o OCI8 e PDO_OCI no PHP7
+aliases:
   - /2020/05/05/configurando-o-oci8-e-pdo_oci-no-php7/
+
 ---
 Fala pessoal!!! Venho trabalhando com o PHP e MySql alguns anos e nos últimos meses precisei fazer a conexão com o Oracle. Passei muito tempo pesquisando e hoje gostaria de criar um tutorial simples para que vocês possam ter uma fonte confiável de como realizar essa instalação. Eu utilizei o Ubuntu 16.04 e o PHP 7.0.
 
@@ -128,5 +113,3 @@ Após executar os comandos acima, crie um link simbólico:
 `$ sudo ln -s /etc/php/7.0/mods-available/pdo_oci.ini /etc/php/7.0/apache2/conf.d/20-pdo_oci.ini`
 
 Reinicie o apache e o seu ambiente de desenvolvimento PHP já estará preparado para se conectar com o Oracle
-
-{{< adsense >}}

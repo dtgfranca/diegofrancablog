@@ -1,28 +1,14 @@
 ---
-  card_desc: "Hey folks, how are you doing? Today I'm bringing you something new for those of you who program in PHP: I'll start a series where I'll show you the best"
-  card_image: http://diegofranca.dev/wp-content/uploads/2021/03/social-banner.png
-  card_title: Best Practices with PHP (PSR) — Part 1
-  og_desc: "Hey folks, how are you doing? Today I'm bringing you something new for those of you who program in PHP: I'll start a series where I'll show you the best"
-  og_image: http://diegofranca.dev/wp-content/uploads/2021/03/social-banner.png
-  og_image_alt:
-  og_title: Best Practices with PHP (PSR) — Part 1
-_edit_last: "1"
-_thumbnail_id: "372"
-author: diego.tg.franca@gmail.com
+categories:
   - php
+cover:
   alt: social-banner
   image: /wp-content/uploads/2021/03/social-banner.png
 date: "2021-03-27T20:03:37+00:00"
-fw:opt:ext:pb:page-builder:json: '[]'
-  page-builder: {}
-    builder_active: false
-    json: '[]'
-guid: http://diegofranca.dev/?p=336
-parent_post_id: null
-post_id: "336"
-summary: "Hey folks, how are you doing? Today I'm bringing you something new for those of you who program in PHP: I'll start a series where I'll show you the best practices in PHP development according to the PSRs. Without further ado, let's begin."
-title: Best Practices with PHP (PSR) — Part 1
+title: "Best Practices with PHP (PSR) — Part 1"
+aliases:
   - /2021/03/27/boas-praticas-com-php-psr-parte-1/
+
 ---
 Hey folks, how are you doing? Today I'm bringing you something new for those of you who program in PHP: I'll start a series where I'll show you the best practices in PHP development according to the PSRs. Without further ado, let's begin.
 

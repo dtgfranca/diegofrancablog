@@ -1,39 +1,20 @@
 ---
-  disable_ads: 0
-  card_desc: "Hey folks! Today I have something interesting about RESTful APIs. When you're building a RESTful API, have you ever stopped to think if what we're developing"
-  card_image: http://diegofranca.dev/wp-content/uploads/2022/01/44007397-0330098e-9e6b-11e8-91e0-24a2cf5d3b55.png
-  card_title: Richardson Maturity Model - Measuring the maturity of your API
-  og_desc: "Hey folks! Today I have something interesting about RESTful APIs. When you're building a RESTful API, have you ever stopped to think if what we're developing"
-  og_image: http://diegofranca.dev/wp-content/uploads/2022/01/44007397-0330098e-9e6b-11e8-91e0-24a2cf5d3b55.png
-  og_image_alt:
-  og_title: Richardson Maturity Model - Measuring the maturity of your API
-_edit_last: "1"
-_thumbnail_id: "454"
-author: diego.tg.franca@gmail.com
+categories:
   - architecture
   - uncategorized
+cover:
   alt: 44007397-0330098e-9e6b-11e8-91e0-24a2cf5d3b55
   image: /wp-content/uploads/2022/01/44007397-0330098e-9e6b-11e8-91e0-24a2cf5d3b55.png
 date: "2022-01-03T12:35:45+00:00"
-fw:opt:ext:pb:page-builder:json: '[]'
-  page-builder: {}
-    builder_active: false
-    json: '[]'
-guid: http://diegofranca.dev/?p=381
-parent_post_id: null
-pms-content-restrict-custom-non-member-redirect-url:
-pms-content-restrict-custom-redirect-url:
-pms-content-restrict-message-logged_out:
-pms-content-restrict-message-non_members:
-pms-content-restrict-type: default
-post_id: "381"
-summary: "Hey folks! Today I have something interesting about RESTful APIs. When you're building a RESTful API, have you ever stopped to think if what we're developing is correct and if there's a standard to follow when creating one?"
+tags:
   - architecture
   - php
   - rest
   - richardson-maturity
-title: Richardson Maturity Model - Measuring the maturity of your API
+title: "Richardson Maturity Model - Measuring the maturity of your API"
+aliases:
   - /2022/01/03/modelo-de-maturidade-de-richardson-mensurando-a-maturidade-da-sua-api/
+
 ---
 Hey folks! Today I have something interesting about RESTful APIs. When you're building a RESTful API, have you ever stopped to think if what we're developing is correct and if there's a standard to follow when creating one?
 
