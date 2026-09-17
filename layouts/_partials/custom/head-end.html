@@ -1,0 +1,13 @@
+<script>
+  (function () {
+    try {
+      var path = window.location.pathname;
+      if (path !== '/' && path !== '/index.html') return;
+      if (sessionStorage.getItem('hextra-lang-chosen')) return;
+      var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+      var target = navLang.indexOf('pt') === 0 ? '/pt/' : '/';
+      sessionStorage.setItem('hextra-lang-chosen', '1');
+      window.location.replace(target);
+    } catch (e) { /* fail silently */ }
+  })();
+</script>

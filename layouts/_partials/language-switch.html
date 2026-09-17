@@ -1,0 +1,32 @@
+{{- $page := .context -}}
+{{- $grow := .grow -}}
+{{- if hugo.IsMultilingual -}}
+  <div class="hx:flex hx:justify-items-start hx:items-center {{ if $grow }}hx:grow{{ end }} hx:text-sm hx:p-2">
+    {{- $currentLang := "" -}}
+    {{- $targetLang := "" -}}
+    {{- if hasPrefix $page.RelPermalink "/pt/" -}}
+      {{- $currentLang = "pt" -}}
+      {{- $targetLang = "en" -}}
+    {{- else -}}
+      {{- $currentLang = "en" -}}
+      {{- $targetLang = "pt" -}}
+    {{- end -}}
+    {{- $link := "" -}}
+    {{- if eq $page.Kind "home" -}}
+      {{- $link = printf "/%s/" $targetLang -}}
+    {{- else -}}
+      {{- $link = strings.ReplaceRE (printf "^/%s/" $currentLang) (printf "/%s/" $targetLang) $page.RelPermalink 1 -}}
+    {{- end -}}
+    {{- range $i, $lang := site.Languages -}}
+      {{- if eq $lang.Lang $currentLang -}}
+        <strong class="hx:font-semibold hx:text-gray-800 hx:dark:text-gray-100" aria-current="true">{{ $lang.Lang }}</strong>
+      {{- else -}}
+        <a
+          href="{{ $link }}"
+          class="hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200 hx:transition-colors"
+        >{{ $lang.Lang }}</a>
+      {{- end -}}
+      {{- if ne $i (sub (len site.Languages) 1) -}}<span class="hx:mx-1 hx:text-gray-400" aria-hidden="true">|</span>{{- end -}}
+    {{- end -}}
+  </div>
+{{- end -}}

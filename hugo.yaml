@@ -1,5 +1,6 @@
 # Hugo configuration file
 title: Diego França Blog
+baseURL: "https://diegofranca.dev/"
 
 # import hextra as module
 module:
@@ -15,13 +16,29 @@ markup:
   # enable hextra syntax highlight
   highlight:
     noClasses: false
+
 # Configuração do Disqus
 services:
   disqus:
-    shortname: 'blog-diegofranca-dev'  # Seu shortname do Disqus
+    shortname: 'blog-diegofranca-dev'
+
+# Multilingual
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: false
+languages:
+  en:
+    languageName: English
+    weight: 1
+  pt:
+    languageName: Português
+    weight: 2
 
 menu:
   main:
+    - name: Language
+      weight: 1
+      params:
+        type: language-switch
     - name: About
       pageRef: /about
       weight: 2
@@ -29,21 +46,21 @@ menu:
       url: "https://github.com/dtgfranca"
       weight: 3
     - name: Search
-      weight: 4
+      weight: 5
       params:
         type: search
     - name: GitHub
-      weight: 5
+      weight: 6
       url: "https://github.com/dtgfranca"
       params:
         icon: github
     - name: Twitter
-      weight: 6
+      weight: 7
       url: "https://x.com/dtgfranca"
       params:
         icon: x-twitter
     - name: LinkedIn
-      weight: 7
+      weight: 8
       url: "https://www.linkedin.com/in/diego-thiago-guimar%C3%A3es-fran%C3%A7a-4a15bb28/"
       params:
         icon: linkedin
