@@ -44,25 +44,28 @@ menu:
     - name: About
       pageRef: /about
       weight: 2
+    - name: Services
+      pageRef: /services
+      weight: 3
     - name: Contact ↗
       url: "https://github.com/dtgfranca"
-      weight: 3
+      weight: 4
     - name: Search
-      weight: 5
+      weight: 6
       params:
         type: search
     - name: GitHub
-      weight: 6
+      weight: 7
       url: "https://github.com/dtgfranca"
       params:
         icon: github
     - name: Twitter
-      weight: 7
+      weight: 8
       url: "https://x.com/dtgfranca"
       params:
         icon: x-twitter
     - name: LinkedIn
-      weight: 8
+      weight: 9
       url: "https://www.linkedin.com/in/diego-thiago-guimar%C3%A3es-fran%C3%A7a-4a15bb28/"
       params:
         icon: linkedin
