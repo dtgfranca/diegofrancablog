@@ -1,0 +1,10 @@
+/* Botão "Solicitar uma consultoria" - cor branca no modo escuro.
+   Selecionado pelo href=mailto:diego.tg.franca@gmail.com para não depender das classes Tailwind. */
+.dark a[href="mailto:diego.tg.franca@gmail.com"] {
+  background-color: #ffffff !important;
+  color: #1d4ed8 !important;
+}
+
+.dark a[href="mailto:diego.tg.franca@gmail.com"]:hover {
+  background-color: #e5e7eb !important;
+}

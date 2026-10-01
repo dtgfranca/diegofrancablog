@@ -35,6 +35,11 @@ languages:
     languageName: Português
     weight: 2
 
+outputs:
+  home:
+    - HTML
+    - RSS
+
 menu:
   main:
     - name: Language

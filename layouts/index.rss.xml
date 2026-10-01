@@ -1,0 +1,43 @@
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>{{ site.Title }}</title>
+    <link>{{ .Permalink }}</link>
+    {{- if strings.HasSuffix .RelPermalink "/pt/" }}
+    <description>O feed principal está em https://diegofranca.dev/index.xml</description>
+    {{- else }}
+    <description>Recent content on {{ site.Title }} (English and Portuguese)</description>
+    {{- end }}
+    <generator>Hugo -- gohugo.io</generator>
+    <language>{{ site.Language.Lang | default "en" }}</language>
+    <copyright>{{ with site.Copyright }}{{ . }}{{ else }}{{ site.Title }} © {{ now.Format "2006" }}{{ end }}</copyright>
+    <lastBuildDate>{{ now.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
+    <atom:link href="{{ .Permalink }}index.xml" rel="self" type="application/rss+xml" />
+    {{- if not (strings.HasSuffix .RelPermalink "/pt/") }}
+    {{- range first 50 (where site.AllPages "Kind" "page").ByDate.Reverse }}
+    {{- $p := .RelPermalink }}
+    {{- if and (not .Draft) (strings.Contains $p "/posts/") }}
+    <item>
+      <title>{{ .Title }}</title>
+      <link>{{ .Permalink }}</link>
+      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+      {{- with site.Author.name }}
+      <dc:creator><![CDATA[{{ . }}]]></dc:creator>
+      {{- end }}
+      <guid isPermaLink="true">{{ .Permalink }}</guid>
+      <description>{{ with .Description | default .Summary }}{{ . | plainify | chomp | htmlEscape }}{{ end }}</description>
+      {{- with .Params.categories }}
+      <category>{{ index . 0 | htmlEscape }}</category>
+      {{- end }}
+      {{- with .Params.tags }}
+      {{- range . }}
+      <category>{{ . | htmlEscape }}</category>
+      {{- end }}
+      {{- end }}
+      <content:encoded>{{ printf "<![CDATA[%s]]>" (.Content | safeHTML) }}</content:encoded>
+    </item>
+    {{- end }}
+    {{- end }}
+    {{- end }}
+  </channel>
+</rss>

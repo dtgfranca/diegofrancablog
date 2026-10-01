@@ -119,7 +119,7 @@ Meu trabalho é focado em transformar problemas complexos de software em soluç�
 
 Se você está começando um projeto, enfrentando problemas de arquitetura ou simplesmente precisa de uma segunda opinião técnica, entre em contato.
 
-<a class="hx:inline-flex hx:items-center hx:gap-2 hx:px-5 hx:py-3 hx:bg-primary-600 hx:text-white hx:font-semibold hx:rounded-lg hx:hover:bg-primary-700 hx:transition-colors" href="mailto:diego.tg.franca@gmail.com">
+<a class="hx:inline-flex hx:items-center hx:gap-2 hx:px-5 hx:py-3 hx:rounded-lg hx:font-semibold hx:transition-colors hx:bg-gray-900 hx:text-white hx:hover:bg-gray-700 hx:dark:bg-white hx:dark:text-gray-900 hx:dark:hover:bg-gray-200" href="https://wa.me/5538984042478" target="_blank" rel="noopener noreferrer">
   Solicitar uma consultoria →
 </a>
 

@@ -1,0 +1,26 @@
+{{- /*
+  Hreflang alternate links for multilingual SEO.
+  Uses URL prefix detection because Hugo 0.150 returns .Language.Lang=en for all pages.
+*/ -}}
+{{- if hugo.IsMultilingual -}}
+  {{- $currentPath := .RelPermalink -}}
+  {{- $currentLang := "en" -}}
+  {{- if hasPrefix $currentPath "/pt/" -}}
+    {{- $currentLang = "pt" -}}
+  {{- end -}}
+  {{- range .Site.Languages -}}
+    {{- if eq .Lang $currentLang -}}
+      <link rel="alternate" hreflang="{{ .Lang }}" href="{{ $currentPath }}" title="{{ $.Title }}" />
+    {{- else -}}
+      {{- $targetLang := .Lang -}}
+      {{- $targetPath := "" -}}
+      {{- if eq $.Kind "home" -}}
+        {{- $targetPath = printf "/%s/" $targetLang -}}
+      {{- else -}}
+        {{- $targetPath = replace $currentPath (printf "/%s/" $currentLang) (printf "/%s/" $targetLang) 1 -}}
+      {{- end -}}
+      <link rel="alternate" hreflang="{{ $targetLang }}" href="{{ $targetPath }}" title="{{ $.Title }}" />
+    {{- end -}}
+  {{- end -}}
+  <link rel="alternate" hreflang="x-default" href="{{ $currentPath }}" />
+{{- end -}}

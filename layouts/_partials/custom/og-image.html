@@ -1,0 +1,33 @@
+{{- /*
+  Get the Open Graph image for a page.
+  Priority:
+    1. .Params.cover.image (or .Params.image)
+    2. /images/og-default.png (fallback)
+  Returns an absolute URL.
+*/ -}}
+{{- $image := "" -}}
+
+{{- if .Params.cover -}}
+  {{- with .Params.cover.image -}}
+    {{- $image = . -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if and (not $image) .Params.image -}}
+  {{- $image = .Params.image -}}
+{{- end -}}
+
+{{- if not $image -}}
+  {{- $image = "images/og-default.png" -}}
+{{- end -}}
+
+{{- /* Convert path to absolute URL */ -}}
+{{- if hasPrefix $image "/" -}}
+  {{- $image = strings.TrimPrefix "/" $image | absURL -}}
+{{- else if not (hasPrefix $image "http://") -}}
+  {{- if not (hasPrefix $image "https://") -}}
+    {{- $image = $image | absURL -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return $image -}}
